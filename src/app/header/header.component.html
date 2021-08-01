@@ -1,0 +1,28 @@
+<div class="navbar sticky-top2 navbar-logo"> <a class="navbar-brand" href="/home"><mat-icon aria-hidden="false" aria-label="Example home icon">health_and_safety</mat-icon>
+  Clinic Manager App</a>
+</div>
+<nav *ngIf="authenticationService.isUserLoggedIn()" class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
+  <button *ngIf="authenticationService.isUserLoggedIn()" mat-icon-button (click)="onToggleSidenav()">
+    <mat-icon class="menu">menu</mat-icon>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item ">
+        <a class="nav-link" *ngIf="authenticationService.isUserLoggedIn()" href="/cars"> <i class="fa fa-car icon "></i>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" *ngIf="authenticationService.isUserLoggedIn()" href="/customers"><i
+          class="fa fa-user icon2 "></i></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" *ngIf="authenticationService.isUserLoggedIn()" href="/rentals"><i
+          class="fa fa-address-book icon3 "></i></a>
+      </li>
+    </ul>
+    <a class="nav-link" *ngIf="authenticationService.isUserLoggedIn()" href="/logout">
+      <i class="fa fa-sign-out iconLogout "></i>
+    </a>
+  </div>
+</nav>

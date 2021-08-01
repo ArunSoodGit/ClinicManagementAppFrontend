@@ -1,0 +1,41 @@
+<div *ngIf="authenticationService.isUserLoggedIn()" class="container">
+  <div class="info">
+
+    <img class="image"
+         src="assets/avatar2.png">
+    <a class="user">
+      Arun Sood
+    </a>
+    <mat-icon class="dioda">fiber_manual_record</mat-icon>
+  </div>
+
+  <ul class="listContainer">
+    <li>
+      <button routerLink="/cars" (click)="onToggleSidenav()">
+        <mat-icon class="icon1">drive_eta</mat-icon>
+        <span class="nav-caption">Flota</span>
+      </button>
+    </li>
+    <li>
+      <button routerLink="/customers" (click)="onToggleSidenav()">
+        <mat-icon class="icon2">people</mat-icon>
+        <span class="nav-caption">Klienci</span>
+      </button>
+    </li>
+    <li>
+      <button routerLink="/rentals" (click)="onToggleSidenav()">
+        <mat-icon class="icon3">view_list</mat-icon>
+        <span class="nav-caption">Rezerwacje</span>
+      </button>
+    </li>
+
+    <li class="logout">
+      <a class="nav-link" *ngIf="authenticationService.isUserLoggedIn()" href="/logout">
+        <button *ngIf="authenticationService.isUserLoggedIn()" href="/logout">
+          <i class="fa fa-sign-out icon "></i>
+          <span class="nav-caption">Wylogowanie</span>
+        </button>
+      </a>
+    </li>
+  </ul>
+</div>
