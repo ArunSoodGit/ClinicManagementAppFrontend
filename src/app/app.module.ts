@@ -27,15 +27,22 @@ import { LoginComponent } from './login/login.component';
 import { HeaderComponent } from './header/header.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import {DatePipe} from "@angular/common";
-import {HttpInterceptorService} from "./http-interceptor.service";
+import {HttpInterceptorService} from "./services/http-interceptor.service";
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ReservationComponent } from './reservation/reservation.component';
+import { LogoutComponent } from './logout/logout.component';
+import { DoctorsComponent } from './doctors/doctors.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     HeaderComponent,
-    SidenavComponent
+    SidenavComponent,
+    ReservationComponent,
+    LogoutComponent,
+    DoctorsComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -65,8 +72,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     ReactiveFormsModule,
     NgbModule,
   ],
-  providers: [{provide: HTTP_INTERCEPTORS,
-    useClass: HttpInterceptorService, multi: true},
+  providers: [
     {provide: MAT_DATE_LOCALE, useValue: 'pl-PL'},
     { provide: LOCALE_ID, useValue: 'pl-PL' },
     DatePipe],

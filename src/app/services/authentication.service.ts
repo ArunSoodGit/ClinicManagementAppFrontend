@@ -21,7 +21,7 @@ export class AuthenticationService {
 
   authenticate(username: string, password: string): any {
     const headers = new HttpHeaders({Authorization: 'Basic ' + btoa(username + ':' + password)});
-    return this.httpClient.get<User>('https://localhost:444/validateLogin', {headers}).pipe(
+    return this.httpClient.get<User>('https://localhost:444/api/validateLogin', {headers}).pipe(
       map(
         userData => {
           const authString = 'Basic ' + btoa(username + ':' + password);
@@ -40,6 +40,7 @@ export class AuthenticationService {
   }
 
   logOut(): any {
-    sessionStorage.removeItem('username');
+     sessionStorage.removeItem('username');
+    return this.httpClient.get('https://localhost:444/logout');
   }
 }

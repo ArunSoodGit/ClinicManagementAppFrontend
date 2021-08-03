@@ -9,20 +9,18 @@
 
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
       <li class="nav-item ">
-        <a class="nav-link" *ngIf="authenticationService.isUserLoggedIn()" href="/cars"> <i class="fa fa-car icon "></i>
+        <a class="nav-link" *ngIf="authenticationService.isUserLoggedIn()" href="/doctors">  <mat-icon class="icon">person</mat-icon>
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" *ngIf="authenticationService.isUserLoggedIn()" href="/customers"><i
-          class="fa fa-user icon2 "></i></a>
+        <a class="nav-link" *ngIf="authenticationService.isUserLoggedIn()" href="/patients"> <mat-icon class="icon2">family_restroom</mat-icon></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" *ngIf="authenticationService.isUserLoggedIn()" href="/rentals"><i
-          class="fa fa-address-book icon3 "></i></a>
+        <a class="nav-link" *ngIf="authenticationService.isUserLoggedIn()" href="/reservation"> <mat-icon class="icon3">insert_invitation</mat-icon></a>
       </li>
     </ul>
     <a class="nav-link" *ngIf="authenticationService.isUserLoggedIn()" href="/logout">
-      <i class="fa fa-sign-out iconLogout "></i>
+      <mat-icon class="icon1">drive_eta</mat-icon>
     </a>
   </div>
 </nav>
