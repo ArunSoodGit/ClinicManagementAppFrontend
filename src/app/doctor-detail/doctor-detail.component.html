@@ -1,0 +1,50 @@
+<div *ngIf="doctor" class="container">
+  <mat-card>
+    <mat-card-header>
+      <div mat-card-avatar><img class="mat-card-avatar-img image"
+                                src="https://raw.githubusercontent.com/ArunSoodGit/rent-car-application/master/src/assets/avatar.png">
+      </div>
+      <mat-card-title>{{doctor.name}}</mat-card-title>
+      <mat-card-subtitle>{{doctor.surname}}</mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content>
+
+      <div class="row">
+        <div class="col-md-12 col-xl-6">
+          <span class="property">Dane osobowe</span>
+          <ul class="list-group ">
+            <li class="list-group-item">Specjalizacja: <span
+              class="property"> {{doctor.specialization.name}}</span></li>
+            <li class="list-group-item">Imię: <span class="property">{{doctor.name}}</span></li>
+            <li class="list-group-item">Nazwisko: <span class="property">{{doctor.surname}}</span></li>
+            <li class="list-group-item">Gabinet nr: <span class="property">{{doctor.room.number}}</span></li>
+            <li class="list-group-item">Nr telefonu: <span class="property">{{doctor.phone}}</span></li>
+          </ul>
+        </div>
+        <div class="col-md-12 col-xl-6">
+
+          <span class="property">Historia wizyt</span>
+
+                    <ul *ngFor="let reservation of reservations" class="list-group" (click)="showVisit(reservation)">
+                      <li class="list-group-item rentals">
+
+                        <ul class="list-group ">
+                          <li class="list-group-item">Numer rezerwacji: <span
+                            class="property"> {{reservation.id}}</span></li>
+                          <li class="list-group-item">Data: <span class="property">{{reservation.visitDate |date}}</span>
+                          </li>
+                          <li class="list-group-item">Pacjent: <span
+                            class="property">{{reservation.patient.name}} {{reservation.patient.surname}}</span></li>
+                          <li class="list-group-item">Status: <span class="property">{{reservation.status}}</span></li>
+                        </ul>
+
+                      </li>
+                    </ul>
+        </div>
+      </div>
+
+    </mat-card-content>
+  </mat-card>
+
+</div>

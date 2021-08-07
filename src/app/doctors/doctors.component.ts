@@ -87,8 +87,8 @@ export class DoctorsComponent implements OnInit {
     // });
   }
 
-  show(element: any): any {
-    // this.router.navigate(['/cars', element.vin]);
+  show(element: Doctor): void {
+     this.router.navigate(['/doctors', element.id]);
   }
 
 

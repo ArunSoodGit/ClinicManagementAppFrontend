@@ -1,1 +1,88 @@
-<p>reservation works!</p>
+<div *ngIf="reservation" class="container">
+  <mat-card>
+    <mat-card-header>
+      <div mat-card-avatar><img class="mat-card-avatar-img image"
+                                src="https://raw.githubusercontent.com/ArunSoodGit/rent-car-application/master/src/assets/avatar.png">
+      </div>
+      <mat-card-title>Wizyta</mat-card-title>
+      <mat-card-subtitle>{{reservation.patient.name}} {{reservation.patient.surname}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="row">
+        <div class="col-md-12 col-xl-6" (click)="showDoctor()">
+          <span class="property">Dane osobowe lekarza</span>
+          <ul class="list-group reservations">
+            <li class="list-group-item">Numer pesel: <span
+              class="property"> {{reservation.patient.pesel}}</span></li>
+            <li class="list-group-item">Imię: <span class="property">{{reservation.doctor.name}}</span></li>
+            <li class="list-group-item">Nazwisko: <span class="property">{{reservation.doctor.surname}}</span></li>
+            <!--                      <li class="list-group-item">Kraj: <span class="property">{{reservation.customer.country}}</span></li>-->
+            <!--                      <li class="list-group-item">Miasto: <span class="property">{{reservation.customer.cityName}}</span></li>-->
+            <!--                      <li class="list-group-item">Adres: <span class="property">{{reservation.customer.address}}</span></li>-->
+            <li class="list-group-item">Gabinet: <span class="property">{{reservation.doctor.room.number}}</span></li>
+            <li class="list-group-item">Numer telefonu: <span class="property">+48 {{reservation.doctor.phone}}</span>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-12 col-xl-6" (click)="showPatient()">
+          <span class="property">Dane osobowe pacjetna</span>
+          <ul class="list-group reservations">
+            <li class="list-group-item">Numer pesel: <span
+              class="property"> {{reservation.patient.pesel}}</span></li>
+            <li class="list-group-item">Imię: <span class="property">{{reservation.patient.name}}</span></li>
+            <li class="list-group-item">Nazwisko: <span class="property">{{reservation.patient.surname}}</span></li>
+            <!--                      <li class="list-group-item">Kraj: <span class="property">{{reservation.customer.country}}</span></li>-->
+            <!--                      <li class="list-group-item">Miasto: <span class="property">{{reservation.customer.cityName}}</span></li>-->
+            <!--                      <li class="list-group-item">Adres: <span class="property">{{reservation.customer.address}}</span></li>-->
+            <!--                      <li class="list-group-item">Adres email: <span class="property">{{reservation.customer.email}}</span></li>-->
+            <li class="list-group-item">Numer telefonu: <span class="property">+48  {{reservation.patient.phone}}</span>
+            </li>
+          </ul>
+
+        </div>
+        <div class="col-12">
+          <span class="property">Szczegóły wizyty</span>
+          <ul class="list-group reservations">
+            <li class="list-group-item">Data wizyty: <span
+              class="property"> {{reservation.visitDate |date}}</span>
+            </li>
+            <li class="list-group-item">Status wizyty: <span class="property">{{reservation.status}}</span></li>
+            <!--                      <li class="list-group-item">Suma kosztów: <span class="property">{{reservation.reservationCost}} zł</span></li>-->
+          </ul>
+          <div class="form-group">
+            <label  class="property" for="description">Opis przebiegu wizyty</label>
+            <textarea [(ngModel)]="visitDescription" class="form-control" id="description" rows="6"></textarea>
+          </div>
+        </div>
+        <div class="col-md-12 col-xl-6">
+          <span class="property">Recepty</span>
+
+                    <ul class="list-group " *ngFor="let prescription of prescriptions">
+
+                      <li class="list-group-item reservations2">
+                        <a href="https://localhost:444/files/{{prescription.id}}" target="_blank">
+                          <div class="document"></div>
+                          {{prescription.name}}
+                        </a>
+                        <div (click)="onRemove(prescription)" class="bin pull-right "></div>
+                      </li>
+                    </ul>
+        </div>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <!--      <button *ngIf="files.length === 0" class="btn-pdf" (click)="generateDocuments()" mat-raised-button>Generuj-->
+      <!--        dokumenty-->
+      <!--      </button>-->
+      <!--      <button *ngIf="reservation.status =='Zaplanowana' && files.length > 0" class="btn-pdf" (click)="accept()"-->
+      <!--              mat-raised-button>-->
+      <!--        Zatwierdź-->
+      <!--      </button>-->
+      <!--      <button *ngIf="reservation.status =='W trakcie'" class="btn-pdf" (click)="acceptAndConfirm()" mat-raised-button>-->
+      <!--        Zatwierdź i-->
+      <!--        zakończ wynajem-->
+      <!--      </button>-->
+    </mat-card-actions>
+  </mat-card>
+
+</div>

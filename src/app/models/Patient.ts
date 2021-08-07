@@ -1,15 +1,11 @@
 import {Room} from "./Room";
-import {Specialization} from "./Specialization";
 import {Reservation} from "./Reservation";
 
-export class Doctor {
+export class Patient {
   id!: number;
   name!: string;
   surname!: number;
   phone!: string;
-  room!: Room;
-  specialization!: Specialization;
+  pesel!: string;
   reservation!: Reservation[];
-
-
 }

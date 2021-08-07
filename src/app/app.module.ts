@@ -1,6 +1,6 @@
 import {LOCALE_ID, NgModule} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import '@angular/common/locales/global/pl';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {AppRoutingModule} from "./app-routing.module";
@@ -27,11 +27,12 @@ import { LoginComponent } from './login/login.component';
 import { HeaderComponent } from './header/header.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import {DatePipe} from "@angular/common";
-import {HttpInterceptorService} from "./services/http-interceptor.service";
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ReservationComponent } from './reservation/reservation.component';
 import { LogoutComponent } from './logout/logout.component';
 import { DoctorsComponent } from './doctors/doctors.component';
+import { PatientComponent } from './patient/patient.component';
+import { DoctorDetailComponent } from './doctor-detail/doctor-detail.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,8 @@ import { DoctorsComponent } from './doctors/doctors.component';
     ReservationComponent,
     LogoutComponent,
     DoctorsComponent,
+    PatientComponent,
+    DoctorDetailComponent,
 
   ],
   imports: [

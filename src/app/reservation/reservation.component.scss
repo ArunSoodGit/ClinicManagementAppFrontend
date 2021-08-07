@@ -1,0 +1,98 @@
+.mat-card {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1000px;
+  .mat-card-content{
+    margin-top: 20px;
+  }
+
+  .mat-card-image {
+    width: 40%;
+
+  }
+
+
+}
+
+.mat-card-avatar-img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.mat-dialog-container{
+  padding: 0!important;
+}
+
+.card{
+  text-align: left!important;
+}
+.list-group-item{
+  width: 100%;
+  text-align: left;
+
+}
+.property{
+  font-weight: 500;
+  font-size: 15px;
+  margin-left: 5px;
+}
+.image {
+  text-align: left;
+  margin-bottom: 10px;
+
+
+  img {
+    width: 100px;
+  }
+}
+
+.list-group{
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+
+.reservations:hover {
+  box-shadow: 0 0.5rem 2rem 0 rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.container{
+  padding-top: 140px;
+}
+//.document{
+//  height: 40px;
+//  width: 40px;
+//  background-image: url("./../../../assets/document.png");
+//  background-repeat: no-repeat;
+//  background-size: cover;
+//  display: inline-block;
+//
+//
+//}
+//.bin{
+//  margin-top: 20px;
+//  height: 20px;
+//  width: 20px;
+//  background-image: url("./../../../assets/bin.png");
+//  background-repeat: no-repeat;
+//  background-size: cover;
+//  display: inline-block;
+//
+//}
+.bin:hover {
+
+  cursor: pointer;
+}
+.mat-card-actions{
+  margin-bottom: 20px!important;
+}
+
+
+a{
+  text-decoration: none;
+  color: black;
+
+}
