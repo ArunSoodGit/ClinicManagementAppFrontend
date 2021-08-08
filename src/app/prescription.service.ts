@@ -16,8 +16,8 @@ export class PrescriptionService {
   }
 
 
-  getPrescriptionsForReservation(reservation:Reservation): Observable<Prescription[]> {
-    return this.httpClient.post<Prescription[]>('https://localhost:444/api/prescriptions', reservation, {headers: this.headers});
+  getPrescriptionForReservation(reservation:Reservation): Observable<Prescription> {
+    return this.httpClient.post<Prescription>('https://localhost:444/api/reservations/prescriptions', reservation, {headers: this.headers});
 
   }
 }

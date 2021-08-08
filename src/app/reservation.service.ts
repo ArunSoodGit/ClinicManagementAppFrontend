@@ -11,9 +11,7 @@ import {Visit} from "./models/Visit";
 export class ReservationService {
   private headers = new HttpHeaders({'Content-Type': 'application/json'});
 
-  constructor(private httpClient: HttpClient) {
-  }
-
+  constructor(private httpClient: HttpClient) {  }
 
   getReservations(): Observable<Reservation[]> {
     return this.httpClient.get<Reservation[]>('https://localhost:444/api/reservations');
@@ -21,16 +19,7 @@ export class ReservationService {
 
   getReservationsForDoctor(doctor:Doctor): Observable<Reservation[]> {
     return this.httpClient.post<Reservation[]>('https://localhost:444/api/doctors/reservations', doctor, {headers: this.headers});
-
   }
-  getReservationForVisit(visit:Visit): Observable<Reservation> {
-    return this.httpClient.post<Reservation>('https://localhost:444/api/visits/reservations', visit, {headers: this.headers});
-
-  }
-  // getReservationByCar(car): Observable<Reservation[]>  {
-  //
-  //   return this.httpClient.post<Reservation[]>('https://localhost:444/api/reservations', car, {headers: this.headers});
-  // }
 
   addReservation(Reservation: Reservation): Observable<Reservation> {
     return this.httpClient.post<Reservation>('https://localhost:444/api/reservations', Reservation, {headers: this.headers});

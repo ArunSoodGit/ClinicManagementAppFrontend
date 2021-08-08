@@ -33,6 +33,9 @@ import { LogoutComponent } from './logout/logout.component';
 import { DoctorsComponent } from './doctors/doctors.component';
 import { PatientComponent } from './patient/patient.component';
 import { DoctorDetailComponent } from './doctor-detail/doctor-detail.component';
+import { MedicineComponent } from './medicine/medicine.component';
+import { DoctorPersonalDataComponent } from './doctor-personal-data/doctor-personal-data.component';
+import { PatientPersonalDataComponent } from './patient-personal-data/patient-personal-data.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +48,9 @@ import { DoctorDetailComponent } from './doctor-detail/doctor-detail.component';
     DoctorsComponent,
     PatientComponent,
     DoctorDetailComponent,
+    MedicineComponent,
+    DoctorPersonalDataComponent,
+    PatientPersonalDataComponent,
 
   ],
   imports: [
