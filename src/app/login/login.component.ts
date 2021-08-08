@@ -42,7 +42,7 @@ export class LoginComponent implements OnInit {
     }
     (this.authService.authenticate(this.username, this.password).subscribe(
         () => {
-          this.router.navigate(['reservation']);
+          this.router.navigate(['doctors']);
           this.invalidLogin = false;
           this.invalidateClass = 'yes';
           this.snackBar.open('Zalogowano pomyślnie', 'OK', {

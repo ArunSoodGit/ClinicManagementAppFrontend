@@ -2,7 +2,8 @@
   <mat-card>
     <mat-card-header>
       <div mat-card-avatar><img class="mat-card-avatar-img image"
-                                src="https://raw.githubusercontent.com/ArunSoodGit/rent-car-application/master/src/assets/avatar.png">
+                                src="https://raw.githubusercontent.com/ArunSoodGit/rent-car-application/master/src/assets/avatar.png"
+                                alt="visit avatar">
       </div>
       <mat-card-title>{{visit}}</mat-card-title>
       <mat-card-subtitle>{{reservation.patient.name}} {{reservation.patient.surname}}</mat-card-subtitle>
@@ -10,26 +11,22 @@
     <mat-card-content>
       <div class="row">
         <div class="col">
-          <app-doctor-personal-data [reservation]="reservation"></app-doctor-personal-data>
+          <span class="property">{{doctorPersonal}}</span>
+          <app-doctor-personal-data [doctor]="doctor"></app-doctor-personal-data>
         </div>
         <div class="col">
-          <app-patient-personal-data [reservation] = "reservation"></app-patient-personal-data>
+          <span class="property">{{patientPersonal}}</span>
+          <app-patient-personal-data [patient]="patient"></app-patient-personal-data>
         </div>
         <div class="col-12">
-          <span class="property">Szczegóły wizyty</span>
-          <ul class="list-group reservations">
-            <li class="list-group-item">Data wizyty: <span
-              class="property"> {{reservation.visitDate | date}}</span>
-            </li>
-            <li class="list-group-item">Status wizyty: <span class="property">{{reservation.status}}</span></li>
-            <!--                      <li class="list-group-item">Suma kosztów: <span class="property">{{reservation.reservationCost}} zł</span></li>-->
-          </ul>
-          <div class="form-group">
-            <label class="property" for="description">Opis przebiegu wizyty</label>
-            <textarea [(ngModel)]="visitDescription" class="form-control" id="description" rows="6"></textarea>
-          </div>
+          <span class="property">{{visitDetails}}</span>
+          <app-reservation-details [reservation]="reservation"></app-reservation-details>
+          <app-reservation-doctor-description
+            [visitDescription]="visitDescription"></app-reservation-doctor-description>
+          <span class="property">{{medicines}}</span>
+          <app-medicine [prescription]="prescription"></app-medicine>
         </div>
-        <!--        <app-medicine></app-medicine>-->
+
         <!--        <div class="col-md-12 col-xl-6">-->
         <!--          <span class="property">Recepty</span>-->
         <!--          <ul class="list-group ">-->
@@ -42,6 +39,7 @@
         <!--            </li>-->
         <!--          </ul>-->
         <!--        </div>-->
+
       </div>
     </mat-card-content>
     <mat-card-actions>

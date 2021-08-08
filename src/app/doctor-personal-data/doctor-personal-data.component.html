@@ -1,12 +1,11 @@
 <div (click)="showDoctor()">
-  <span class="property">Dane osobowe lekarza</span>
   <ul class="list-group reservations">
     <li class="list-group-item">Specjalizacja: <span
-      class="property"> {{reservation.doctor.specialization.name}}</span></li>
-    <li class="list-group-item">Imię: <span class="property">{{reservation.doctor.name}}</span></li>
-    <li class="list-group-item">Nazwisko: <span class="property">{{reservation.doctor.surname}}</span></li>
-    <li class="list-group-item">Gabinet: <span class="property">{{reservation.doctor.room.number}}</span></li>
-    <li class="list-group-item">Numer telefonu: <span class="property">+48 {{reservation.doctor.phone}}</span>
+      class="property"> {{doctor.specialization.name}}</span></li>
+    <li class="list-group-item">Imię: <span class="property">{{doctor.name}}</span></li>
+    <li class="list-group-item">Nazwisko: <span class="property">{{doctor.surname}}</span></li>
+    <li class="list-group-item">Gabinet: <span class="property">{{doctor.room.number}}</span></li>
+    <li class="list-group-item">Numer telefonu: <span class="property">+48 {{doctor.phone}}</span>
     </li>
   </ul>
 </div>

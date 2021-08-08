@@ -6,6 +6,7 @@ import {DatePipe} from "@angular/common";
 import {MatDialog} from "@angular/material/dialog";
 import {Reservation} from "../models/Reservation";
 import {Prescription} from "../models/Prescription";
+import {Doctor} from "../models/Doctor";
 
 @Component({
   selector: 'app-doctor-personal-data',
@@ -14,7 +15,7 @@ import {Prescription} from "../models/Prescription";
 })
 export class DoctorPersonalDataComponent implements OnInit {
 
-  @Input() reservation!: Reservation;
+  @Input() doctor!: Doctor;
 
   visitDescription!: string;
 
@@ -23,22 +24,13 @@ export class DoctorPersonalDataComponent implements OnInit {
               private prescriptionService: PrescriptionService,
               public datePipe: DatePipe,
               private dialog: MatDialog) {
-    this.getReservation();
   }
 
   ngOnInit(): void {
   }
 
   showDoctor(): void {
-    this.router.navigate(['/doctors', this.reservation.doctor.id]);
+    this.router.navigate(['/doctors', this.doctor.id]);
 
-  }
-
-  getReservation(): void {
-    this.reservationService.getReservationById(Number(this.route.snapshot.paramMap.get('id')))
-      .subscribe(reservation => {
-        this.reservation = reservation;
-        this.visitDescription = reservation.description;
-      })
   }
 }

@@ -6,6 +6,8 @@ import {MatDialog} from "@angular/material/dialog";
 import {Prescription} from "../models/Prescription";
 import {PrescriptionService} from "../prescription.service";
 import {DatePipe} from "@angular/common";
+import {Doctor} from "../models/Doctor";
+import {Patient} from "../models/Patient";
 
 @Component({
   selector: 'app-reservation',
@@ -18,6 +20,12 @@ export class ReservationComponent {
   reservation!: Reservation;
   prescription!: Prescription;
   visit: string = 'Wizyta';
+  patientPersonal: string = 'Dane osobowe pacjetna';
+  doctorPersonal: string = 'Dane osobowe lekarza';
+  visitDetails: string = 'Dane osobowe lekarza';
+  medicines: string = 'Leki';
+  doctor!: Doctor;
+  patient!: Patient;
 
 
   constructor(private router: Router, private route: ActivatedRoute,
@@ -51,14 +59,14 @@ export class ReservationComponent {
       .subscribe(reservation => {
         this.reservation = reservation;
         this.visitDescription = reservation.description;
+        this.doctor = reservation.doctor;
+        this.patient = reservation.patient;
+        console.log(reservation);
         this.prescriptionService.getPrescriptionForReservation(reservation).subscribe(prescription => {
           this.prescription = prescription;
-          console.log(this.prescription);
         });
       })
   }
-
-
 
 
   showPatient(): void {
@@ -218,7 +226,7 @@ export class ReservationComponent {
 // }
 
 
-  refresh():void {
+  refresh(): void {
     // this.getFiles();
   }
 

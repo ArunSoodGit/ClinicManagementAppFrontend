@@ -6,6 +6,7 @@ import {ReservationService} from "../reservation.service";
 import {PrescriptionService} from "../prescription.service";
 import {DatePipe} from "@angular/common";
 import {MatDialog} from "@angular/material/dialog";
+import {Patient} from "../models/Patient";
 
 @Component({
   selector: 'app-patient-personal-data',
@@ -13,36 +14,20 @@ import {MatDialog} from "@angular/material/dialog";
   styleUrls: ['./patient-personal-data.component.scss']
 })
 export class PatientPersonalDataComponent implements OnInit {
-  @Input() reservation!: Reservation;
-
-  visitDescription!: string;
-  prescription!: Prescription;
+  @Input() patient!: Patient;
 
   constructor(private router: Router, private route: ActivatedRoute,
               private reservationService: ReservationService,
               private prescriptionService: PrescriptionService,
               public datePipe: DatePipe,
               private dialog: MatDialog) {
-    this.getReservation();
   }
 
   ngOnInit(): void {
   }
 
   showPatient(): void {
-    this.router.navigate(['/patients', this.reservation.patient.id]);
+    this.router.navigate(['/patients', this.patient.id]);
 
-  }
-
-  getReservation(): void {
-    this.reservationService.getReservationById(Number(this.route.snapshot.paramMap.get('id')))
-      .subscribe(reservation => {
-        this.reservation = reservation;
-        this.visitDescription = reservation.description;
-        this.prescriptionService.getPrescriptionForReservation(reservation).subscribe(prescription => {
-          this.prescription = prescription;
-          console.log(this.prescription);
-        });
-      })
   }
 }

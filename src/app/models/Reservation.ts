@@ -9,6 +9,6 @@ export class Reservation {
   doctor!: Doctor;
   patient!: Patient;
   description!: string;
-  prescription!: Prescription[];
+  prescription!: Prescription;
 }
 

@@ -1,8 +1,8 @@
-import {Medicine} from "./Medicine";
+import {PrescriptionMedicine} from "./PrescriptionMedicine";
 
 export class Prescription {
   id!: number;
   description!: string;
   date!: Date;
-  prescriptionMedicineSet!: Medicine[];
+  prescriptionMedicine!: PrescriptionMedicine[];
 }

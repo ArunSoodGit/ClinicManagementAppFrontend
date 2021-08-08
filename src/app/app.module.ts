@@ -36,6 +36,8 @@ import { DoctorDetailComponent } from './doctor-detail/doctor-detail.component';
 import { MedicineComponent } from './medicine/medicine.component';
 import { DoctorPersonalDataComponent } from './doctor-personal-data/doctor-personal-data.component';
 import { PatientPersonalDataComponent } from './patient-personal-data/patient-personal-data.component';
+import { ReservationDetailsComponent } from './reservation-details/reservation-details.component';
+import { ReservationDoctorDescriptionComponent } from './reservation-doctor-description/reservation-doctor-description.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +53,8 @@ import { PatientPersonalDataComponent } from './patient-personal-data/patient-pe
     MedicineComponent,
     DoctorPersonalDataComponent,
     PatientPersonalDataComponent,
+    ReservationDetailsComponent,
+    ReservationDoctorDescriptionComponent,
 
   ],
   imports: [
