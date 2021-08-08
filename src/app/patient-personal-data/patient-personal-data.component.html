@@ -1,0 +1,11 @@
+<div (click)="showPatient()">
+  <span class="property">Dane osobowe pacjetna</span>
+  <ul class="list-group reservations">
+    <li class="list-group-item">Numer pesel: <span
+      class="property"> {{reservation.patient.pesel}}</span></li>
+    <li class="list-group-item">Imię: <span class="property">{{reservation.patient.name}}</span></li>
+    <li class="list-group-item">Nazwisko: <span class="property">{{reservation.patient.surname}}</span></li>
+    <li class="list-group-item">Numer telefonu: <span class="property">+48  {{reservation.patient.phone}}</span>
+    </li>
+  </ul>
+</div>
