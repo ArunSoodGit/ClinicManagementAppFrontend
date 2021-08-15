@@ -1,0 +1,49 @@
+<div *ngIf="reservation" class="container">
+  <mat-card>
+    <mat-card-header>
+      <div mat-card-avatar><img class="mat-card-avatar-img imageVisit"
+                                src="/assets/images/waiting_room.png"
+                                alt="visit avatar">
+      </div>
+      <mat-card-title>{{visit}}</mat-card-title>
+      <mat-card-subtitle>{{reservation.patient.name}} {{reservation.patient.surname}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="row">
+        <div class="col">
+          <span class="property"><img  class="image" src="/assets/images/doctor-avatar.png"> {{ doctorPersonal}}</span>
+          <app-doctor-personal-data [doctor]="doctor"></app-doctor-personal-data>
+        </div>
+        <div class="col">
+          <span class="property"><img  class="image" src="/assets/images/patient_information.png"> {{ patientPersonal}}</span>
+          <app-patient-personal-data [patient]="patient"></app-patient-personal-data>
+        </div>
+        <div class="col-12">
+          <span class="property"><img class="image" src="/assets/images/medical_history.png"> {{ visitDetails}}</span>
+          <app-reservation-detail-info [reservation]="reservation"></app-reservation-detail-info>
+          <span class="property"><img class="image"
+                                      src="/assets/images/sthetoscope.png"> {{ doctorDescription}}</span>
+
+          <app-reservation-doctor-description
+            [visitDescription]="visitDescription"></app-reservation-doctor-description>
+          <span class="property"><img class="image" src="/assets/images/medical_tablet.png"> {{ medicines}}</span>
+          <app-medicines *ngIf="prescription" [prescription]="prescription"></app-medicines>
+        </div>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <!--      <button *ngIf="files.length === 0" class="btn-pdf" (click)="generateDocuments()" mat-raised-button>Generuj-->
+      <!--        dokumenty-->
+      <!--      </button>-->
+      <!--      <button *ngIf="reservation-detail.status =='Zaplanowana' && files.length > 0" class="btn-pdf" (click)="accept()"-->
+      <!--              mat-raised-button>-->
+      <!--        Zatwierdź-->
+      <!--      </button>-->
+      <!--      <button *ngIf="reservation-detail.status =='W trakcie'" class="btn-pdf" (click)="acceptAndConfirm()" mat-raised-button>-->
+      <!--        Zatwierdź i-->
+      <!--        zakończ wynajem-->
+      <!--      </button>-->
+    </mat-card-actions>
+  </mat-card>
+
+</div>

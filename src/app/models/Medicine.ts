@@ -6,5 +6,5 @@ export class Medicine {
   producer!: string;
   dose!: string;
   packet!: string;
-  price!: string;
+  price!: number;
 }

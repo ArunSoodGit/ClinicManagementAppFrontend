@@ -28,16 +28,19 @@ import { HeaderComponent } from './header/header.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import {DatePipe} from "@angular/common";
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { ReservationComponent } from './reservation/reservation.component';
+import { ReservationDetailComponent } from './reservation/reservation-detail/reservation-detail.component';
 import { LogoutComponent } from './logout/logout.component';
-import { DoctorsComponent } from './doctors/doctors.component';
-import { PatientComponent } from './patient/patient.component';
-import { DoctorDetailComponent } from './doctor-detail/doctor-detail.component';
-import { MedicineComponent } from './medicine/medicine.component';
-import { DoctorPersonalDataComponent } from './doctor-personal-data/doctor-personal-data.component';
-import { PatientPersonalDataComponent } from './patient-personal-data/patient-personal-data.component';
-import { ReservationDetailsComponent } from './reservation-details/reservation-details.component';
-import { ReservationDoctorDescriptionComponent } from './reservation-doctor-description/reservation-doctor-description.component';
+import { DoctorsComponent } from './doctor/doctors/doctors.component';
+import { PatientsComponent } from './patient/patients/patients.component';
+import { DoctorDetailComponent } from './doctor/doctor-detail/doctor-detail.component';
+import { DoctorPersonalDataComponent } from './doctor/doctor-personal-data/doctor-personal-data.component';
+import { PatientPersonalDataComponent } from './patient/patient-personal-data/patient-personal-data.component';
+import { ReservationDetailInfoComponent } from './reservation/reservation-detail-info/reservation-detail-info.component';
+import { ReservationDoctorDescriptionComponent } from './reservation/reservation-doctor-description/reservation-doctor-description.component';
+import { PatientDetailComponent } from './patient/patient-detail/patient-detail.component';
+import { MedicinesComponent } from './medicines/medicines.component';
+import { MedicineDetailComponent } from './medicine-detail/medicine-detail.component';
+import { ReservationsComponent } from './reservations/reservations.component';
 
 @NgModule({
   declarations: [
@@ -45,16 +48,19 @@ import { ReservationDoctorDescriptionComponent } from './reservation-doctor-desc
     LoginComponent,
     HeaderComponent,
     SidenavComponent,
-    ReservationComponent,
+    ReservationDetailComponent,
     LogoutComponent,
     DoctorsComponent,
-    PatientComponent,
+    PatientsComponent,
     DoctorDetailComponent,
-    MedicineComponent,
     DoctorPersonalDataComponent,
     PatientPersonalDataComponent,
-    ReservationDetailsComponent,
+    ReservationDetailInfoComponent,
     ReservationDoctorDescriptionComponent,
+    PatientDetailComponent,
+    MedicinesComponent,
+    MedicineDetailComponent,
+    ReservationsComponent,
 
   ],
   imports: [

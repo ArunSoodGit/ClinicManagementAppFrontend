@@ -1,64 +1,80 @@
-.sticky-top{
+.sticky-top {
   z-index: 1;
 
 }
-button{
+
+button {
   outline: 0;
 }
 
-.navbar-logo{
+.navbar-logo {
 
   margin-left: 0;
-  background: rgb(47, 255, 206);
-  background: linear-gradient(90deg, rgb(110, 178, 163) 0%, rgb(79, 134, 122) 62%, rgb(51, 86, 78) 100%);
-
-}
-.nav-link{
-  padding: 0;
-  margin-left: 20px;
-
+  background: rgb(24, 73, 103);
+  background: linear-gradient(90deg, rgb(80, 150, 189) 0%, rgb(29, 112, 164) 62%, rgb(9, 76, 112) 100%);
 }
 
-.icon{
+.nav-link {
+  padding-left: 20px!important;
+  padding-right: 20px!important;
+  color: #ffffff !important;
+  border-right: 1px solid white;
+  width: 120px;
+  text-align: center;
+}
+
+.icon {
   font-size: 18px;
   color: #04fdc2;
 }
-.icon2{
+
+.icon2 {
   font-size: 18px;
   color: #ffb9b9;
 }
-.icon3{
+
+.icon3 {
   font-size: 18px;
   color: #00c2ff;
 }
-.iconLogout{
+
+.iconLogout {
   font-size: 22px;
   color: white;
 }
-.navbar-brand{
+
+.navbar-brand {
   letter-spacing: 4px;
   color: white;
 
 }
-.sticky-top{
+
+.sticky-top {
   position: fixed;
   top: 46px;
   width: 100%;
   z-index: 4;
-  background: rgb(47, 255, 206);
-  background: linear-gradient(90deg, rgb(110, 178, 163) 0%, rgb(79, 134, 122) 62%, rgb(51, 86, 78) 100%);
+  background: rgb(24, 73, 103);
+  background: linear-gradient(90deg, rgb(80, 150, 189) 0%, rgb(29, 112, 164) 62%, rgb(9, 76, 112) 100%);
 }
-.sticky-top2{
+
+.sticky-top2 {
   position: fixed;
   top: 0px;
   width: 100%;
   z-index: 3;
 
 }
-.menu{
+
+.menu {
   color: white;
 }
-.date{
+
+.date {
   color: white;
   font-size: 20px;
+}
+
+.nav-link:hover {
+  background-color: #219bc7;
 }

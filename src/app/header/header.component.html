@@ -9,17 +9,21 @@
 
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
       <li class="nav-item ">
-        <a class="nav-link" *ngIf="authenticationService.isUserLoggedIn()" href="/doctors">  <mat-icon class="icon">person</mat-icon>
+        <a class="nav-link" *ngIf="authenticationService.isUserLoggedIn()" routerLink="/doctors">  <mat-icon class="icon">person</mat-icon>
+          Lekarze
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" *ngIf="authenticationService.isUserLoggedIn()" href="/patients"> <mat-icon class="icon2">family_restroom</mat-icon></a>
+        <a class="nav-link" *ngIf="authenticationService.isUserLoggedIn()" routerLink="/patients"> <mat-icon class="icon2">family_restroom</mat-icon>Pacjenci</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" *ngIf="authenticationService.isUserLoggedIn()" href="/reservations"> <mat-icon class="icon3">insert_invitation</mat-icon></a>
+        <a class="nav-link" *ngIf="authenticationService.isUserLoggedIn()" routerLink="/medicines"> <mat-icon class="icon2">family_restroom</mat-icon>Leki</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" *ngIf="authenticationService.isUserLoggedIn()" routerLink="/reservations"> <mat-icon class="icon3">insert_invitation</mat-icon>Wizyty</a>
       </li>
     </ul>
-    <a class="nav-link" *ngIf="authenticationService.isUserLoggedIn()" href="/logout">
+    <a class="nav-link" *ngIf="authenticationService.isUserLoggedIn()" routerLink="/logout">
       <mat-icon class="icon1">drive_eta</mat-icon>
     </a>
   </div>
