@@ -4,6 +4,7 @@ import {Reservation} from "../models/Reservation";
 import {Observable} from "rxjs";
 import {Prescription} from "../models/Prescription";
 import {Medicine} from "../models/Medicine";
+import {Doctor} from "../models/Doctor";
 
 @Injectable({
   providedIn: 'root'
@@ -14,9 +15,15 @@ export class MedicineService {
   constructor(private httpClient: HttpClient) {
   }
 
-
-  getMedicinesForPrescription(prescription:Prescription): Observable<Medicine[]> {
-    return this.httpClient.post<Medicine[]>('https://localhost:444/api/prescriptions/medicines', prescription, {headers: this.headers});
-
+  getMedicines(): Observable<Medicine[]> {
+    return this.httpClient.get<Medicine[]>('https://localhost:444/api/medicines');
   }
+  addMedicine(medicine: Medicine): Observable<Medicine> {
+    return this.httpClient.post<Medicine>('https://localhost:444/api/medicines', medicine, {headers: this.headers});
+  }
+  updateMedicine(medicine: Medicine): Observable<Medicine> {
+    return this.httpClient.put<Medicine>('https://localhost:444/medicines', medicine, {headers: this.headers})
+      ;
+  }
+
 }

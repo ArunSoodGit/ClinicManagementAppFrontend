@@ -38,9 +38,16 @@ import { PatientPersonalDataComponent } from './patient/patient-personal-data/pa
 import { ReservationDetailInfoComponent } from './reservation/reservation-detail-info/reservation-detail-info.component';
 import { ReservationDoctorDescriptionComponent } from './reservation/reservation-doctor-description/reservation-doctor-description.component';
 import { PatientDetailComponent } from './patient/patient-detail/patient-detail.component';
-import { MedicinesComponent } from './medicines/medicines.component';
+import { ReservationMedicinesComponent } from './reservation/reservation-medicines/reservation-medicines.component';
 import { MedicineDetailComponent } from './medicine-detail/medicine-detail.component';
 import { ReservationsComponent } from './reservations/reservations.component';
+import { NewDoctorComponent } from './new-doctor/new-doctor.component';
+import { RemoveDoctorComponent } from './remove-doctor/remove-doctor.component';
+import { EditDoctorComponent } from './edit-doctor/edit-doctor.component';
+import { MedicinesComponent } from './medicines/medicines.component';
+import { NewMedicineComponent } from './new-medicine/new-medicine.component';
+import { EditMedicineComponent } from './edit-medicine/edit-medicine.component';
+import { NewReservationComponent } from './new-reservation/new-reservation.component';
 
 @NgModule({
   declarations: [
@@ -58,9 +65,16 @@ import { ReservationsComponent } from './reservations/reservations.component';
     ReservationDetailInfoComponent,
     ReservationDoctorDescriptionComponent,
     PatientDetailComponent,
-    MedicinesComponent,
+    ReservationMedicinesComponent,
     MedicineDetailComponent,
     ReservationsComponent,
+    NewDoctorComponent,
+    RemoveDoctorComponent,
+    EditDoctorComponent,
+    MedicinesComponent,
+    NewMedicineComponent,
+    EditMedicineComponent,
+    NewReservationComponent,
 
   ],
   imports: [

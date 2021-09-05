@@ -1,8 +1,8 @@
 <div class="container">
 
   <div class="form-inline">
-    <button mat-raised-button class="add" (click)="addPatient()">
-      Dodaj pacjenta
+    <button mat-raised-button  class="add-icon" (click)="addPatient()">
+      <mat-icon>person_add_alt</mat-icon>
     </button>
   </div>
 
@@ -15,7 +15,9 @@
 
     <ng-container matColumnDef="Zdjęcie">
       <th mat-header-cell *matHeaderCellDef mat-sort-header></th>
-      <td  mat-cell class="imageTd" *matCellDef="let element"  (click)="show(element)"><img  class="image" src="https://raw.githubusercontent.com/ArunSoodGit/rent-car-application/master/src/assets/avatar.png"></td>
+      <td mat-cell class="imageTd" *matCellDef="let element" (click)="show(element)"><img class="image"
+                                                                                          src="https://raw.githubusercontent.com/ArunSoodGit/rent-car-application/master/src/assets/avatar.png">
+      </td>
     </ng-container>
 
     <ng-container matColumnDef="Imie">
@@ -46,8 +48,8 @@
         <a [matMenuTriggerFor]="menu" mat-button matSuffix mat-stroked-button aria-label="search">
           <i class="fa fa-bars"></i>
         </a>
-        <span >
-            <mat-icon [ngStyle]="{'color':row.isAvailable === false ? 'red' : 'rgb(0, 247, 0)'}"  class="diod">fiber_manual_record</mat-icon>
+        <span>
+            <mat-icon [ngStyle]="{'color':row.isAvailable === false ? 'red' : 'rgb(0, 247, 0)'}" class="diod">fiber_manual_record</mat-icon>
         </span>
         <mat-menu #menu="matMenu">
           <button (click)="onEdit(element)" mat-menu-item>

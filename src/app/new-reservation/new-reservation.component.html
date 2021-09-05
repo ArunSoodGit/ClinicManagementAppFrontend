@@ -1,0 +1,73 @@
+<button mat-mini-fab mat-raised-button class="close-button" [mat-dialog-close]="true">
+  <mat-icon>close</mat-icon>
+</button>
+<div mat-dialog-title>
+  <h1 class="title"> Nowa rezerwacja</h1>
+</div>
+<div mat-dialog-content>
+  <form #reservationForm="ngForm" (ngSubmit)="reservationForm.form.valid && onSubmit(reservation) " class="example-form">
+    <mat-form-field  *ngIf="!data"class="element">
+      <mat-label>Lekarz</mat-label>
+      <mat-select (ngModelChange)="onChangeDoctor($event)"  [(ngModel)]="doctor" name="doctor" required="true">
+        <mat-option    *ngFor="let doctor of doctors" [value]="doctor">
+          <!--          <img [src]="doctor.imagePath" width="50px" height="30px">-->
+          {{doctor.name}}
+          {{doctor.surname}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field  *ngIf="data" class="element">
+      <mat-label>Doctor</mat-label>
+      <mat-select [(ngModel)]="data" name="doctor" required="true">
+        <mat-option  [value]="data">
+          <!--          <img [src]="data.imagePath" width="50px" height="30px">-->
+          {{data.name}}
+          {{data.surname}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field class="element2">
+      <mat-label>Pacjent</mat-label>
+      <mat-select [(ngModel)]="patient" name="patient" required="true">
+        <mat-option *ngFor="let patient of patients" [value]="patient" >
+          {{patient.name}}
+          {{patient.surname}}
+          ({{patient.pesel}})
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="element" >
+      <mat-label>Data wizyty</mat-label>
+      <input [(ngModel)]="reservation.visitDate" name="visitDate"  matInput [matDatepicker]="picker">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker  #picker></mat-datepicker>
+    </mat-form-field>
+
+    <!--    <mat-form-field class="element">-->
+    <!--      <mat-label>Koszt wynajmu</mat-label>-->
+    <!--      <input matInput [(ngModel)]="rental.rentalCost" disabled name="rentalCost" required="true">-->
+    <!--      <span matSuffix>zł</span>-->
+    <!--    </mat-form-field>-->
+
+    <!--    <mat-form-field  *ngIf="!data" class="element">-->
+    <!--      <mat-label>Kaucja</mat-label>-->
+    <!--      <input matInput [(ngModel)]="car.carMarkModel.carClass.deposit" disabled name="rentalDeposit" required="true">-->
+    <!--      <span matSuffix>zł</span>-->
+    <!--    </mat-form-field>-->
+
+    <!--    <mat-form-field  *ngIf="data" class="element">-->
+    <!--      <mat-label>Kaucja</mat-label>-->
+    <!--      <input matInput [(ngModel)]="data.carMarkModel.carClass.deposit" disabled name="rentalDeposit" required="true">-->
+    <!--      <span matSuffix>zł</span>-->
+    <!--    </mat-form-field>-->
+
+  </form>
+</div>
+
+<button mat-raised-button class="create" (click)="onSubmit(reservation)" [disabled]="!reservationForm.form.valid">
+
+  Zapisz
+
+</button>
+

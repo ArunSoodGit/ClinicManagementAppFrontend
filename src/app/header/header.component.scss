@@ -18,29 +18,33 @@ button {
   padding-left: 20px!important;
   padding-right: 20px!important;
   color: #ffffff !important;
-  border-right: 1px solid white;
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
   width: 120px;
   text-align: center;
 }
 
 .icon {
   font-size: 18px;
-  color: #04fdc2;
+  color: #ffffff;
+}
+.drive_eta{
+  border: none;
 }
 
 .icon2 {
   font-size: 18px;
-  color: #ffb9b9;
+  color: #ffffff;
 }
 
 .icon3 {
   font-size: 18px;
-  color: #00c2ff;
+  color: #ffffff;
 }
 
-.iconLogout {
+.logout-icon {
   font-size: 22px;
   color: white;
+  border: none;
 }
 
 .navbar-brand {

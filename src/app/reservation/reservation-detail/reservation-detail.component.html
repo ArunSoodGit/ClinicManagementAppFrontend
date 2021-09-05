@@ -27,7 +27,7 @@
           <app-reservation-doctor-description
             [visitDescription]="visitDescription"></app-reservation-doctor-description>
           <span class="property"><img class="image" src="/assets/images/medical_tablet.png"> {{ medicines}}</span>
-          <app-medicines *ngIf="prescription" [prescription]="prescription"></app-medicines>
+          <app-reservation-medicines *ngIf="prescription" [prescription]="prescription"></app-reservation-medicines>
         </div>
       </div>
     </mat-card-content>

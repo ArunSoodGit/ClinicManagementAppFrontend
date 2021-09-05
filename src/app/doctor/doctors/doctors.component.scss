@@ -13,11 +13,15 @@ table {
 
   img {
     margin-right: 10px;
-    width: 80px;
-    height: 50px;
+    width: 70px;
+    height: 40px;
     object-fit: contain;
     cursor: pointer;
     outline: 0;
+  }
+  .imageEdit{
+    width: 50px;
+    height: 30px;
   }
 
   .mat-row:hover {
@@ -117,4 +121,8 @@ td, th {
 }
 .mat-stroked-button{
   border: none;
+}
+.add-icon{
+  background-color: #f3f8fc;
+  color: white;
 }

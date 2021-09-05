@@ -10,9 +10,10 @@ import {DoctorDetailComponent} from "./doctor/doctor-detail/doctor-detail.compon
 import {PatientsComponent} from "./patient/patients/patients.component";
 import {PatientDetailComponent} from "./patient/patient-detail/patient-detail.component";
 import {MedicineDetailComponent} from "./medicine-detail/medicine-detail.component";
-import {MedicinesComponent} from "./medicines/medicines.component";
+import {ReservationMedicinesComponent} from "./reservation/reservation-medicines/reservation-medicines.component";
 import {ReservationDetailInfoComponent} from "./reservation/reservation-detail-info/reservation-detail-info.component";
 import {ReservationsComponent} from "./reservations/reservations.component";
+import {MedicinesComponent} from "./medicines/medicines.component";
 
 const routes: Routes = [
   {path: '', component: LoginComponent},
@@ -25,7 +26,7 @@ const routes: Routes = [
   {path: 'reservations', component: ReservationsComponent, canActivate: [AuthGuardService] },
   {path: 'reservations/:id', component: ReservationDetailComponent, canActivate: [AuthGuardService] },
   {path: 'medicines', component: MedicinesComponent, canActivate: [AuthGuardService] },
-  {path: 'medicines/:id', component: MedicineDetailComponent, canActivate: [AuthGuardService] },
+  {path: 'reservation-medicines/:id', component: MedicineDetailComponent, canActivate: [AuthGuardService] },
   // {path: 'rentals', component: AllRentalsComponent, canActivate: [AuthGaurdService] },
   // {path: 'editCar', component: EditCarComponent, canActivate: [AuthGaurdService] },
   // {path: 'editCustomer', component: EditCustomerComponent, canActivate: [AuthGaurdService] },

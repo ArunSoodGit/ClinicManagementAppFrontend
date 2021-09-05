@@ -1,0 +1,94 @@
+<button mat-mini-fab mat-raised-button class="close-button" [mat-dialog-close]="true">
+  <mat-icon>close</mat-icon>
+</button>
+<div mat-dialog-title>
+  <h1 class="title"> Dodaj Lekarza</h1>
+</div>
+<div mat-dialog-content>
+  <form #carForm="ngForm" (ngSubmit)="carForm.form.valid && onSubmit(doctor)" class="example-form">
+    <p>
+      <mat-form-field class="full">
+        <mat-label>Numer vin</mat-label>
+        <input type="text" matInput placeholder="Numer vin" [(ngModel)]="doctor.id" name="vin" required="true">
+        <mat-icon matSuffix>verified_user</mat-icon>
+
+      </mat-form-field>
+    </p>
+    <mat-form-field class="element">
+      <mat-label>Marka</mat-label>
+      <input type="text" matInput placeholder="Marka" [(ngModel)]="doctor.name" name="marka"
+             required="true">
+    </mat-form-field>
+
+    <mat-form-field class="element2">
+      <mat-label>Model</mat-label>
+      <input type="text" matInput placeholder="Model" [(ngModel)]="doctor.surname" name="model" required="true">
+      <mat-icon matSuffix>drive_eta</mat-icon>
+
+    </mat-form-field>
+    <mat-form-field class="element">
+      <mat-label>Numer rejestracyjny</mat-label>
+      <input type="text" matInput placeholder="Numer rejestracyjny" [(ngModel)]="doctor.specialization"
+             name="registrationNumber" required="true">
+      <mat-icon matSuffix>call_to_action</mat-icon>
+
+    </mat-form-field>
+    <mat-form-field class="element2">
+      <mat-label>Pojemność silnika</mat-label>
+      <input type="number" matInput placeholder="Pojemność silnika" [(ngModel)]="doctor.room"
+             name="Pojemność silnika" required="true">
+      <mat-icon matSuffix>thermostat</mat-icon>
+
+    </mat-form-field>
+    <mat-form-field class="element">
+      <mat-label>Kolor</mat-label>
+      <input type="text" matInput placeholder="Kolor" [(ngModel)]="doctor.phone" name="color" required="true">
+      <mat-icon matSuffix>color_lens</mat-icon>
+
+    </mat-form-field>
+<!--    <mat-form-field class="element2">-->
+<!--      <mat-label>Przebieg</mat-label>-->
+<!--      <input type="number" matInput placeholder="Przebieg" [(ngModel)]="doctor.mileage" name="Przebieg" required="true">-->
+<!--      <mat-icon matSuffix>timeline</mat-icon>-->
+<!--    </mat-form-field>-->
+<!--    <mat-form-field class="element">-->
+<!--      <mat-label>Dostępność</mat-label>-->
+<!--      <mat-select [(ngModel)]="doctor.isAvailable" name="isAvailable" required="true">-->
+<!--        <mat-option *ngFor="let available of available" [value]="available">-->
+<!--          {{available}}-->
+<!--        </mat-option>-->
+<!--      </mat-select>-->
+<!--    </mat-form-field>-->
+
+<!--    <mat-form-field class="element2">-->
+<!--      <mat-label>Klasa</mat-label>-->
+<!--      <mat-select [(ngModel)]="doctor.carMarkModel.carClass.className" name="className" required="true">-->
+<!--        <mat-option *ngFor="let class of classes" [value]="class">-->
+<!--          {{class}}-->
+<!--        </mat-option>-->
+<!--      </mat-select>-->
+<!--    </mat-form-field>-->
+
+
+<!--    <mat-form-field class="element">-->
+<!--      <mat-label>Data produkcji</mat-label>-->
+<!--      <input [(ngModel)]="doctor.dateOfProduction" matInput [matDatepicker]="picker" name="dateOfProduction" required="true">-->
+<!--      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>-->
+<!--      <mat-datepicker #picker></mat-datepicker>-->
+<!--    </mat-form-field>-->
+
+
+<!--    <mat-form-field class="element2">-->
+<!--      <mat-label>Przegląd</mat-label>-->
+<!--      <input type="text" matInput [matDatepicker]="picker2" placeholder="Przegląd" [(ngModel)]="doctor.review" name="review" required="true">-->
+<!--      <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>-->
+<!--      <mat-datepicker #picker2></mat-datepicker>-->
+<!--    </mat-form-field>-->
+
+
+  </form>
+</div>
+
+<button mat-raised-button class="create" (click)="onSubmit(doctor)" [disabled]="!carForm.form.valid">
+  Zapisz
+</button>

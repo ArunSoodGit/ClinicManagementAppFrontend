@@ -1,0 +1,43 @@
+
+.rentals {
+  list-style: none;
+}
+
+.list-group-item {
+  width: 100%;
+  text-align: left;
+
+}
+
+.property {
+  font-weight: 500;
+  font-size: 15px;
+  margin-left: 5px;
+}
+
+
+.list-group {
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+
+.medicines:hover {
+  box-shadow: 0 0.5rem 2rem 0 rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.container {
+  padding-top: 140px;
+}
+
+
+a {
+  text-decoration: none;
+  color: black;
+
+}
+.add-icon{
+  background-color: #f3f8fc;
+  color: white;
+}

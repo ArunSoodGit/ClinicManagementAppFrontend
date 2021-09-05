@@ -1,0 +1,20 @@
+
+<div class="row">
+  <ul *ngFor="let medicine of medicines" class="col-xl-6 col-sm-12" (click)="showMedicine(medicine)">
+    <li class="rentals">
+      <ul class="list-group medicines">
+        <li class="list-group-item">Nazwa leku: <span
+          class="property"> {{medicine.name}}</span></li>
+        <li class="list-group-item">Producent: <span class="property">{{medicine.producer}}</span>
+        <li class="list-group-item">Dawka: <span
+          class="property">{{medicine.dose}}</span></li>
+        <li class="list-group-item">Opakowanie: <span class="property">{{medicine.packet}} szt.</span>
+        <li class="list-group-item">Cena za opakowanie: <span class="property">{{medicine.price}} zł</span>
+        </li>
+      </ul>
+
+    </li>
+  </ul>
+
+</div>
+

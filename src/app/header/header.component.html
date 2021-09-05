@@ -17,14 +17,14 @@
         <a class="nav-link" *ngIf="authenticationService.isUserLoggedIn()" routerLink="/patients"> <mat-icon class="icon2">family_restroom</mat-icon>Pacjenci</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" *ngIf="authenticationService.isUserLoggedIn()" routerLink="/medicines"> <mat-icon class="icon2">family_restroom</mat-icon>Leki</a>
+        <a class="nav-link" *ngIf="authenticationService.isUserLoggedIn()" routerLink="/medicines"> <mat-icon class="icon2">medication</mat-icon>Leki</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" *ngIf="authenticationService.isUserLoggedIn()" routerLink="/reservations"> <mat-icon class="icon3">insert_invitation</mat-icon>Wizyty</a>
       </li>
     </ul>
-    <a class="nav-link" *ngIf="authenticationService.isUserLoggedIn()" routerLink="/logout">
-      <mat-icon class="icon1">drive_eta</mat-icon>
+    <a class="nav-link logout-icon" *ngIf="authenticationService.isUserLoggedIn()" routerLink="/logout">
+      <mat-icon >logout</mat-icon>
     </a>
   </div>
 </nav>

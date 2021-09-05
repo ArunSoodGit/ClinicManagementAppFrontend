@@ -6,6 +6,9 @@ import {Doctor} from "../../models/Doctor";
 import {MatSort} from "@angular/material/sort";
 import {MatPaginator} from "@angular/material/paginator";
 import {DoctorService} from "../../services/doctor.service";
+import {NewDoctorComponent} from "../../new-doctor/new-doctor.component";
+import {RemoveDoctorComponent} from "../../remove-doctor/remove-doctor.component";
+import {EditDoctorComponent} from "../../edit-doctor/edit-doctor.component";
 
 @Component({
   selector: 'app-doctors',
@@ -54,37 +57,37 @@ export class DoctorsComponent implements OnInit {
   }
 
   onRemove(doctor: Doctor): void {
-    // const dialogRef = this.dialog.open(RemoveCarComponent, {
-    //   width: '480px',
-    //   panelClass: 'icon-outside',
-    //   data: car
-    // });
-    // dialogRef.afterClosed().subscribe(result => {
-    //
-    //   this.car = car;
-    //   this.refresh();
-    // });
+    const dialogRef = this.dialog.open(RemoveDoctorComponent, {
+      width: '480px',
+      panelClass: 'icon-outside',
+      data: doctor
+    });
+    dialogRef.afterClosed().subscribe(result => {
+
+      this.doctor = doctor;
+      this.refresh();
+    });
   }
 
   onCreate(): void {
-    // const dialogRef = this.dialog.open(NewCarComponent, {
-    //   width: '480px',
-    //   height: 'auto',
-    //   panelClass: 'icon-outside',
-    // }).afterClosed().subscribe(result => {
-    //   this.refresh();
-    // });
+    const dialogRef = this.dialog.open(NewDoctorComponent, {
+      width: '480px',
+      height: 'auto',
+      panelClass: 'icon-outside',
+    }).afterClosed().subscribe(result => {
+      this.refresh();
+    });
   }
 
   onEdit(doctor: Doctor): void {
-    // const dialogRef = this.dialog.open(EditCarComponent, {
-    //   width: '500px',
-    //   panelClass: 'icon-outside',
-    //   data: car
-    // }).afterClosed().subscribe(result => {
-    //   this.refresh();
-    //   this.car = car;
-    // });
+    const dialogRef = this.dialog.open(EditDoctorComponent, {
+      width: '500px',
+      panelClass: 'icon-outside',
+      data: doctor
+    }).afterClosed().subscribe(result => {
+      this.refresh();
+      this.doctor = doctor;
+    });
   }
 
   show(element: Doctor): void {

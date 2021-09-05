@@ -1,1 +1,68 @@
-<p>reservations works!</p>
+<div class="container">
+
+  <div class="form-inline">
+    <button class="add-icon" mat-raised-button (click)="onCreate()">
+      <mat-icon >person_add_alt</mat-icon>
+    </button>
+  </div>
+
+  <div class="search-div">
+    <mat-form-field class="search-form-field" floatLabel="never">
+      <input matInput (keyup)="applyFilter($event)" placeholder="Szukaj" autocomplete="off">
+    </mat-form-field>
+  </div>
+  <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+
+    <ng-container matColumnDef="Zdjęcie">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header></th>
+      <td  mat-cell class="imageTd" *matCellDef="let element"  (click)="show(element)"><img  class="image" src="/assets/images/waiting_room.png"></td>
+    </ng-container>
+
+    <ng-container matColumnDef="Pacjent">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Pacjent</th>
+      <td mat-cell *matCellDef="let element" (click)="show(element)"
+          data-label="Pacjent"> {{element.patient.name}} {{element.patient.surname}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Lekarz">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Lekarz</th>
+      <td mat-cell *matCellDef="let element" (click)="show(element)"
+          data-label="Lekarz"> {{element.doctor.name}} {{element.doctor.surname}} </td>
+    </ng-container>
+    <ng-container matColumnDef="Data">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Data</th>
+      <td mat-cell *matCellDef="let element" (click)="show(element)"
+          data-label="Data"> {{element.visitDate |date}} </td>
+    </ng-container>
+    <ng-container matColumnDef="Status">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Status</th>
+      <td mat-cell *matCellDef="let element" (click)="show(element)"
+          data-label="Status"> {{element.status}}</td>
+    </ng-container>
+    <ng-container matColumnDef="edit">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header></th>
+      <td class="buttonTd" mat-cell *matCellDef="let element; let row">
+        <a [matMenuTriggerFor]="menu" mat-button matSuffix mat-stroked-button aria-label="search">
+          <img class="imageEdit" src="assets/images/edit.png">
+        </a>
+
+        <mat-menu #menu="matMenu">
+          <button (click)="onEdit(element)" mat-menu-item>
+            <i class="fa fa-edit"></i>
+            Edytuj
+          </button>
+          <button (click)="onRemove(element)" mat-menu-item>
+            <i class="fa fa-trash"></i>
+            Usuń
+          </button>
+        </mat-menu>
+      </td>
+    </ng-container>
+
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; let i = index columns: displayedColumns"></tr>
+
+  </table>
+  <mat-paginator [pageSizeOptions]="[5, 10, 20,50,100]" showFirstLastButtons></mat-paginator>
+</div>
