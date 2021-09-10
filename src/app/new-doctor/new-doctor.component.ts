@@ -1,9 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Doctor} from "../models/Doctor";
 import {MatDialogRef} from "@angular/material/dialog";
 import {Router} from "@angular/router";
 import {MatSnackBar} from "@angular/material/snack-bar";
 import {DoctorService} from "../services/doctor.service";
+import {Room} from "../models/Room";
+import {Specialization} from "../models/Specialization";
 
 @Component({
   selector: 'app-new-doctor',
@@ -13,9 +15,9 @@ import {DoctorService} from "../services/doctor.service";
 export class NewDoctorComponent implements OnInit {
 
   doctor: Doctor = new Doctor();
-  classes: string[] = ['A', 'B', 'C', 'D', 'E', 'F', 'S', 'J', 'M'];
-  available: string[] = ['Dostępny', 'Wynajęty'];
-  reviews: string[] = ['Tak', 'Nie'];
+  room: Room = new Room();
+  specialization: Specialization = new Specialization();
+  specializations: string[] = ['Pediatra', 'Laryngolog', 'Onkolog', 'Ortopeda', 'Okulista', 'Urolog'];
 
   constructor(private router: Router, private doctorService: DoctorService, private snackBar: MatSnackBar,
               public dialogRef: MatDialogRef<NewDoctorComponent>) {
@@ -27,10 +29,14 @@ export class NewDoctorComponent implements OnInit {
   onSubmit(doctor: Doctor): void {
     // this.doctor.imagePath = 'https://raw.githubusercontent.com/ArunSoodGit/rent-car/master/src/assets/img/'
     //   + this.doctor.carMarkModel.model.toLowerCase() + '.png';
+    doctor.specialization = this.specialization;
+    doctor.room = this.room;
+    console.log(doctor);
 
     this.doctorService.addDoctor(doctor).subscribe(
       data => {
         this.router.navigate(['/doctors']);
+        window.location.reload();
       });
 
     this.dialogRef.close();

@@ -1,1 +1,24 @@
-<p>remove-doctor works!</p>
+<button mat-mini-fab mat-raised-button class="close-button" [mat-dialog-close]="true">
+  <mat-icon>close</mat-icon>
+</button>
+<div mat-dialog-title>
+
+
+  <div class="container">
+    <h1 class="title"> Usuń lekarza</h1>
+    <p>Czy na pewno chcesz usunąć
+      {{data.name}} {{data.surname}} ? </p>
+    <div class="image">
+<!--      <img [src]="data.imagePath">-->
+    </div>
+
+
+    <div class="action">
+      <button type="button" class="btn btn-success button" (click)="onRemove()">Tak</button>
+      <button type="button" class="btn btn-danger button" (click)="dialogRef.close()">Nie</button>
+    </div>
+
+
+  </div>
+
+</div>

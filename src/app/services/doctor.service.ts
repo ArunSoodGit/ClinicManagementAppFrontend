@@ -29,7 +29,7 @@ export class DoctorService {
       ;
   }
   deleteDoctor(id: number): Observable<Doctor> {
-    const url = `https://localhost:444/doctors/${id}`;
+    const url = `https://localhost:444/api/doctors/${id}`;
     return this.httpClient.delete<Doctor>(url, {headers: this.headers});
   }
   // getRentalByCar(vin: string): Observable<Rental>  {

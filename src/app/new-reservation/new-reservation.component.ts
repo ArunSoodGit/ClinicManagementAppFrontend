@@ -54,6 +54,7 @@ export class NewReservationComponent implements OnInit {
       data => {
         console.log(data);
         this.router.navigate(['/reservations']);
+        window.location.reload();
       });
 
     this.dialogRef.close();
