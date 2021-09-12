@@ -11,7 +11,7 @@ import {MedicineService} from "../../services/medicine.service";
 export class ReservationMedicinesComponent implements OnInit {
 
   @Input()
-  prescription!: Prescription;
+  medicinesList!: Medicine[];
 
   medicines!: Medicine[];
 
@@ -19,7 +19,7 @@ export class ReservationMedicinesComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.medicines = this.prescription.medicines;
+    this.medicines = this.medicinesList;
     console.log(this.medicines);
   }
 

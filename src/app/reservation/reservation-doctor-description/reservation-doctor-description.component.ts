@@ -1,5 +1,7 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {Reservation} from "../../models/Reservation";
+import { EventEmitter } from '@angular/core';
+import {Component, Input, OnInit, Output} from '@angular/core';
+
+
 
 @Component({
   selector: 'app-reservation-doctor-description',
@@ -7,10 +9,17 @@ import {Reservation} from "../../models/Reservation";
   styleUrls: ['./reservation-doctor-description.component.scss']
 })
 export class ReservationDoctorDescriptionComponent implements OnInit {
-  @Input() visitDescription!: string;
-  constructor() { }
+  @Input() description!: string;
+  @Output() descriptionChange = new EventEmitter<string>();
 
-  ngOnInit(): void {
+  constructor() {
   }
 
+  ngOnInit(): void {
+
+  }
+
+  test() {
+     this.descriptionChange.emit(this.description);
+  }
 }

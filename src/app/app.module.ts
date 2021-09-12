@@ -52,6 +52,7 @@ import { NewPatientComponent } from './patient/new-patient/new-patient.component
 import { EditPatientComponent } from './patient/edit-patient/edit-patient.component';
 import { RemovePatientComponent } from './patient/remove-patient/remove-patient.component';
 import { RemoveMedicineComponent } from './medicine/remove-medicine/remove-medicine.component';
+import {MatAutocompleteModule} from "@angular/material/autocomplete";
 
 @NgModule({
   declarations: [
@@ -112,6 +113,7 @@ import { RemoveMedicineComponent } from './medicine/remove-medicine/remove-medic
     BrowserModule,
     ReactiveFormsModule,
     NgbModule,
+    MatAutocompleteModule,
   ],
   providers: [
     {provide: MAT_DATE_LOCALE, useValue: 'pl-PL'},

@@ -25,24 +25,29 @@
                                       src="/assets/images/sthetoscope.png"> {{ doctorDescription}}</span>
 
           <app-reservation-doctor-description
-            [visitDescription]="visitDescription"></app-reservation-doctor-description>
+            [(description)]="visitDescription"></app-reservation-doctor-description>
           <span class="property"><img class="image" src="/assets/images/medical_tablet.png"> {{ medicines}}</span>
-          <app-reservation-medicines *ngIf="prescription" [prescription]="prescription"></app-reservation-medicines>
+          <form *ngIf="reservation.status =='Zaplanowana'" class="example-form">
+            <mat-form-field class="w-50 " >
+              <mat-label>Wybierz lekrastwa</mat-label>
+              <mat-select [formControl]="myControl" multiple >
+                <mat-option *ngFor="let medicine of medicinesList" #matOption (click)="addMedicines(matOption.value, matOption.selected)" [value]="medicine">{{medicine.name}}</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </form>
+          <app-reservation-medicines  [medicinesList]="selectedMedicines"></app-reservation-medicines>
         </div>
       </div>
+
+
     </mat-card-content>
     <mat-card-actions>
-      <!--      <button *ngIf="files.length === 0" class="btn-pdf" (click)="generateDocuments()" mat-raised-button>Generuj-->
-      <!--        dokumenty-->
-      <!--      </button>-->
-      <!--      <button *ngIf="reservation-detail.status =='Zaplanowana' && files.length > 0" class="btn-pdf" (click)="accept()"-->
-      <!--              mat-raised-button>-->
-      <!--        Zatwierdź-->
-      <!--      </button>-->
-      <!--      <button *ngIf="reservation-detail.status =='W trakcie'" class="btn-pdf" (click)="acceptAndConfirm()" mat-raised-button>-->
-      <!--        Zatwierdź i-->
-      <!--        zakończ wynajem-->
-      <!--      </button>-->
+
+            <button *ngIf="reservation.status =='Zaplanowana'" class="btn-pdf" (click)="accept()"
+                    mat-raised-button>
+              Zatwierdź
+            </button>
+
     </mat-card-actions>
   </mat-card>
 
