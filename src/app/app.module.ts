@@ -39,15 +39,19 @@ import { ReservationDetailInfoComponent } from './reservation/reservation-detail
 import { ReservationDoctorDescriptionComponent } from './reservation/reservation-doctor-description/reservation-doctor-description.component';
 import { PatientDetailComponent } from './patient/patient-detail/patient-detail.component';
 import { ReservationMedicinesComponent } from './reservation/reservation-medicines/reservation-medicines.component';
-import { MedicineDetailComponent } from './medicine-detail/medicine-detail.component';
-import { ReservationsComponent } from './reservations/reservations.component';
-import { NewDoctorComponent } from './new-doctor/new-doctor.component';
-import { RemoveDoctorComponent } from './remove-doctor/remove-doctor.component';
-import { EditDoctorComponent } from './edit-doctor/edit-doctor.component';
-import { MedicinesComponent } from './medicines/medicines.component';
-import { NewMedicineComponent } from './new-medicine/new-medicine.component';
-import { EditMedicineComponent } from './edit-medicine/edit-medicine.component';
-import { NewReservationComponent } from './new-reservation/new-reservation.component';
+import { MedicineDetailComponent } from './medicine/medicine-detail/medicine-detail.component';
+import { ReservationsComponent } from './reservation/reservations/reservations.component';
+import { NewDoctorComponent } from './doctor/new-doctor/new-doctor.component';
+import { RemoveDoctorComponent } from './doctor/remove-doctor/remove-doctor.component';
+import { EditDoctorComponent } from './doctor/edit-doctor/edit-doctor.component';
+import { MedicinesComponent } from './medicine/medicines/medicines.component';
+import { NewMedicineComponent } from './medicine/new-medicine/new-medicine.component';
+import { EditMedicineComponent } from './medicine/edit-medicine/edit-medicine.component';
+import { NewReservationComponent } from './reservation/new-reservation/new-reservation.component';
+import { NewPatientComponent } from './patient/new-patient/new-patient.component';
+import { EditPatientComponent } from './patient/edit-patient/edit-patient.component';
+import { RemovePatientComponent } from './patient/remove-patient/remove-patient.component';
+import { RemoveMedicineComponent } from './medicine/remove-medicine/remove-medicine.component';
 
 @NgModule({
   declarations: [
@@ -75,6 +79,10 @@ import { NewReservationComponent } from './new-reservation/new-reservation.compo
     NewMedicineComponent,
     EditMedicineComponent,
     NewReservationComponent,
+    NewPatientComponent,
+    EditPatientComponent,
+    RemovePatientComponent,
+    RemoveMedicineComponent,
 
   ],
   imports: [

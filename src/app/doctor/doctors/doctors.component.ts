@@ -6,9 +6,9 @@ import {Doctor} from "../../models/Doctor";
 import {MatSort} from "@angular/material/sort";
 import {MatPaginator} from "@angular/material/paginator";
 import {DoctorService} from "../../services/doctor.service";
-import {NewDoctorComponent} from "../../new-doctor/new-doctor.component";
-import {RemoveDoctorComponent} from "../../remove-doctor/remove-doctor.component";
-import {EditDoctorComponent} from "../../edit-doctor/edit-doctor.component";
+import {NewDoctorComponent} from "../new-doctor/new-doctor.component";
+import {RemoveDoctorComponent} from "../remove-doctor/remove-doctor.component";
+import {EditDoctorComponent} from "../edit-doctor/edit-doctor.component";
 
 @Component({
   selector: 'app-doctors',

@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {Router} from "@angular/router";
 import {MatSnackBar} from "@angular/material/snack-bar";
 import {MatDialogRef} from "@angular/material/dialog";
-import {MedicineService} from "../services/medicine.service";
-import {Medicine} from "../models/Medicine";
+import {MedicineService} from "../../services/medicine.service";
+import {Medicine} from "../../models/Medicine";
 
 @Component({
   selector: 'app-new-medicine',

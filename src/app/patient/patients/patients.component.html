@@ -46,11 +46,9 @@
       <th mat-header-cell *matHeaderCellDef mat-sort-header></th>
       <td class="buttonTd" mat-cell *matCellDef="let element; let row">
         <a [matMenuTriggerFor]="menu" mat-button matSuffix mat-stroked-button aria-label="search">
-          <i class="fa fa-bars"></i>
+          <img class="imageEdit" src="assets/images/edit.png">
         </a>
-        <span>
-            <mat-icon [ngStyle]="{'color':row.isAvailable === false ? 'red' : 'rgb(0, 247, 0)'}" class="diod">fiber_manual_record</mat-icon>
-        </span>
+
         <mat-menu #menu="matMenu">
           <button (click)="onEdit(element)" mat-menu-item>
             <i class="fa fa-edit"></i>

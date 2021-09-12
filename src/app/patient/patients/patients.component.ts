@@ -8,6 +8,9 @@ import {MatDialog} from "@angular/material/dialog";
 import {MatTableDataSource} from "@angular/material/table";
 import {PatientService} from "../../patient.service";
 import {Patient} from "../../models/Patient";
+import {RemovePatientComponent} from "../remove-patient/remove-patient.component";
+import {NewPatientComponent} from "../new-patient/new-patient.component";
+import {EditPatientComponent} from "../edit-patient/edit-patient.component";
 
 @Component({
   selector: 'app-patient',
@@ -54,38 +57,38 @@ export class PatientsComponent implements OnInit {
     );
   }
 
-  onRemove(doctor: Doctor): void {
-    // const dialogRef = this.dialog.open(RemoveCarComponent, {
-    //   width: '480px',
-    //   panelClass: 'icon-outside',
-    //   data: car
-    // });
-    // dialogRef.afterClosed().subscribe(result => {
-    //
-    //   this.car = car;
-    //   this.refresh();
-    // });
+  onRemove(patient: Patient): void {
+    const dialogRef = this.dialog.open(RemovePatientComponent, {
+      width: '480px',
+      panelClass: 'icon-outside',
+      data: patient
+    });
+    dialogRef.afterClosed().subscribe(result => {
+
+      this.patient = patient;
+      this.refresh();
+    });
   }
 
   addPatient(): void {
-    // const dialogRef = this.dialog.open(NewCarComponent, {
-    //   width: '480px',
-    //   height: 'auto',
-    //   panelClass: 'icon-outside',
-    // }).afterClosed().subscribe(result => {
-    //   this.refresh();
-    // });
+    const dialogRef = this.dialog.open(NewPatientComponent, {
+      width: '480px',
+      height: 'auto',
+      panelClass: 'icon-outside',
+    }).afterClosed().subscribe(result => {
+      this.refresh();
+    });
   }
 
-  onEdit(doctor: Doctor): void {
-    // const dialogRef = this.dialog.open(EditCarComponent, {
-    //   width: '500px',
-    //   panelClass: 'icon-outside',
-    //   data: car
-    // }).afterClosed().subscribe(result => {
-    //   this.refresh();
-    //   this.car = car;
-    // });
+  onEdit(patient: Patient): void {
+    const dialogRef = this.dialog.open(EditPatientComponent, {
+      width: '500px',
+      panelClass: 'icon-outside',
+      data: patient
+    }).afterClosed().subscribe(result => {
+      this.refresh();
+      this.patient = patient;
+    });
   }
 
   show(patient: Patient): void {

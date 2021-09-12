@@ -1,8 +1,8 @@
 import {Component, Inject, OnInit} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
 import {MatSnackBar} from "@angular/material/snack-bar";
-import {DoctorService} from "../services/doctor.service";
-import {Doctor} from "../models/Doctor";
+import {DoctorService} from "../../services/doctor.service";
+import {Doctor} from "../../models/Doctor";
 
 @Component({
   selector: 'app-remove-doctor',
@@ -21,6 +21,7 @@ export class RemoveDoctorComponent implements OnInit {
   onRemove(): void {
     this.doctorService.deleteDoctor(this.data.id).subscribe();
     this.dialogRef.close();
+    window.location.reload();
     this.snackBar.open('Usuwanie zakończone pomyślnie', 'OK', {
       duration: 2000,
     });

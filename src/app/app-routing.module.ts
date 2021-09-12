@@ -9,11 +9,11 @@ import {DoctorsComponent} from "./doctor/doctors/doctors.component";
 import {DoctorDetailComponent} from "./doctor/doctor-detail/doctor-detail.component";
 import {PatientsComponent} from "./patient/patients/patients.component";
 import {PatientDetailComponent} from "./patient/patient-detail/patient-detail.component";
-import {MedicineDetailComponent} from "./medicine-detail/medicine-detail.component";
+import {MedicineDetailComponent} from "./medicine/medicine-detail/medicine-detail.component";
 import {ReservationMedicinesComponent} from "./reservation/reservation-medicines/reservation-medicines.component";
 import {ReservationDetailInfoComponent} from "./reservation/reservation-detail-info/reservation-detail-info.component";
-import {ReservationsComponent} from "./reservations/reservations.component";
-import {MedicinesComponent} from "./medicines/medicines.component";
+import {ReservationsComponent} from "./reservation/reservations/reservations.component";
+import {MedicinesComponent} from "./medicine/medicines/medicines.component";
 
 const routes: Routes = [
   {path: '', component: LoginComponent},

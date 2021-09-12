@@ -1,11 +1,11 @@
 import {Component, OnInit} from '@angular/core';
-import {Doctor} from "../models/Doctor";
+import {Doctor} from "../../models/Doctor";
 import {MatDialogRef} from "@angular/material/dialog";
 import {Router} from "@angular/router";
 import {MatSnackBar} from "@angular/material/snack-bar";
-import {DoctorService} from "../services/doctor.service";
-import {Room} from "../models/Room";
-import {Specialization} from "../models/Specialization";
+import {DoctorService} from "../../services/doctor.service";
+import {Room} from "../../models/Room";
+import {Specialization} from "../../models/Specialization";
 
 @Component({
   selector: 'app-new-doctor',
@@ -18,6 +18,7 @@ export class NewDoctorComponent implements OnInit {
   room: Room = new Room();
   specialization: Specialization = new Specialization();
   specializations: string[] = ['Pediatra', 'Laryngolog', 'Onkolog', 'Ortopeda', 'Okulista', 'Urolog'];
+  rooms: string[] = ['1a', '1b', '2', '3', '4a', '4b'];
 
   constructor(private router: Router, private doctorService: DoctorService, private snackBar: MatSnackBar,
               public dialogRef: MatDialogRef<NewDoctorComponent>) {

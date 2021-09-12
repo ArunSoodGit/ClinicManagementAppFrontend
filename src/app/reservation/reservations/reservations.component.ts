@@ -1,16 +1,16 @@
 import {ChangeDetectorRef, Component, OnInit, ViewChild} from '@angular/core';
-import {Medicine} from "../models/Medicine";
+import {Medicine} from "../../models/Medicine";
 import {MatSort} from "@angular/material/sort";
 import {MatPaginator} from "@angular/material/paginator";
 import {Router} from "@angular/router";
-import {MedicineService} from "../services/medicine.service";
+import {MedicineService} from "../../services/medicine.service";
 import {MatDialog} from "@angular/material/dialog";
 import {MatTableDataSource} from "@angular/material/table";
-import {RemoveDoctorComponent} from "../remove-doctor/remove-doctor.component";
-import {NewDoctorComponent} from "../new-doctor/new-doctor.component";
-import {EditDoctorComponent} from "../edit-doctor/edit-doctor.component";
-import {ReservationService} from "../services/reservation.service";
-import {Reservation} from "../models/Reservation";
+import {RemoveDoctorComponent} from "../../doctor/remove-doctor/remove-doctor.component";
+import {NewDoctorComponent} from "../../doctor/new-doctor/new-doctor.component";
+import {EditDoctorComponent} from "../../doctor/edit-doctor/edit-doctor.component";
+import {ReservationService} from "../../services/reservation.service";
+import {Reservation} from "../../models/Reservation";
 import {NewReservationComponent} from "../new-reservation/new-reservation.component";
 
 @Component({

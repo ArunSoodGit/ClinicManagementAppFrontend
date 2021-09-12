@@ -1,18 +1,19 @@
 import {ChangeDetectorRef, Component, OnInit, ViewChild} from '@angular/core';
-import {Doctor} from "../models/Doctor";
+import {Doctor} from "../../models/Doctor";
 import {MatSort} from "@angular/material/sort";
 import {MatPaginator} from "@angular/material/paginator";
 import {Router} from "@angular/router";
-import {DoctorService} from "../services/doctor.service";
+import {DoctorService} from "../../services/doctor.service";
 import {MatDialog} from "@angular/material/dialog";
 import {MatTableDataSource} from "@angular/material/table";
-import {RemoveDoctorComponent} from "../remove-doctor/remove-doctor.component";
-import {NewDoctorComponent} from "../new-doctor/new-doctor.component";
-import {EditDoctorComponent} from "../edit-doctor/edit-doctor.component";
-import {MedicineService} from "../services/medicine.service";
-import {Medicine} from "../models/Medicine";
+import {RemoveDoctorComponent} from "../../doctor/remove-doctor/remove-doctor.component";
+import {NewDoctorComponent} from "../../doctor/new-doctor/new-doctor.component";
+import {EditDoctorComponent} from "../../doctor/edit-doctor/edit-doctor.component";
+import {MedicineService} from "../../services/medicine.service";
+import {Medicine} from "../../models/Medicine";
 import {NewMedicineComponent} from "../new-medicine/new-medicine.component";
 import {EditMedicineComponent} from "../edit-medicine/edit-medicine.component";
+import {RemoveMedicineComponent} from "../remove-medicine/remove-medicine.component";
 
 @Component({
   selector: 'app-medicines',
@@ -62,7 +63,7 @@ export class MedicinesComponent implements OnInit {
   }
 
   onRemove(medicine: Medicine): void {
-    const dialogRef = this.dialog.open(RemoveDoctorComponent, {
+    const dialogRef = this.dialog.open(RemoveMedicineComponent, {
       width: '480px',
       panelClass: 'icon-outside',
       data: medicine

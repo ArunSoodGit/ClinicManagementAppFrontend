@@ -1,8 +1,8 @@
 import {Component, Inject, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
-import {Medicine} from "../models/Medicine";
+import {Medicine} from "../../models/Medicine";
 import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
-import {MedicineService} from "../services/medicine.service";
+import {MedicineService} from "../../services/medicine.service";
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
@@ -24,6 +24,7 @@ export class EditMedicineComponent  {
       data => {
         console.log(data);
         this.router.navigate(['/medicines']);
+        window.location.reload();
       }
     );
     this.dialogRef.close();

@@ -26,7 +26,7 @@
 
     <mat-form-field class="element2">
       <mat-label>Specjalizacja</mat-label>
-      <mat-select [(ngModel)]="specialization.name" name="specialization" required="true">
+      <mat-select [(ngModel)]="doctor.specialization.name" name="specialization" required="true">
         <mat-option *ngFor="let specialization of specializations" [value]="specialization">
           {{specialization}}
         </mat-option>
@@ -34,8 +34,11 @@
     </mat-form-field>
     <mat-form-field class="element2">
       <mat-label>Gabinet</mat-label>
-      <input type="number" matInput placeholder="Numer gabinetu" [(ngModel)]="room.number"
-             name="room" required="true">
+      <mat-select [(ngModel)]="doctor.room.number" name="room" required="true">
+        <mat-option *ngFor="let room of rooms" [value]="room">
+          {{room}}
+        </mat-option>
+      </mat-select>
 
     </mat-form-field>
 

@@ -1,0 +1,38 @@
+<button mat-mini-fab mat-raised-button class="close-button" [mat-dialog-close]="true">
+  <mat-icon>close</mat-icon>
+</button>
+<div mat-dialog-title>
+  <h1 class="title"> Zarejestruj pacjenta</h1>
+</div>
+<div mat-dialog-content>
+  <form #patientForm="ngForm" (ngSubmit)="patientForm.form.valid && onSubmit(patient)" class="example-form">
+    <mat-form-field class="element">
+      <mat-label>Imię</mat-label>
+      <input type="text" matInput placeholder="Imię" [(ngModel)]="patient.name" name="name"
+             required="true">
+    </mat-form-field>
+
+    <mat-form-field class="element2">
+      <mat-label>Nazwisko</mat-label>
+      <input type="text" matInput placeholder="Nazwisko" [(ngModel)]="patient.surname" name="surname" required="true">
+
+    </mat-form-field>
+
+    <mat-form-field class="element">
+      <mat-label>Pesel</mat-label>
+      <input type="text" matInput placeholder="Pesel" [(ngModel)]="patient.pesel" name="pesel"
+             required="true">
+    </mat-form-field>
+    <mat-form-field class="element2">
+      <mat-label>Numer telefonu</mat-label>
+      <input type="text" matInput placeholder="Numer telefonu" [(ngModel)]="patient.phone"
+             name="phone" required="true">
+
+    </mat-form-field>
+
+  </form>
+</div>
+
+<button mat-raised-button class="create" (click)="onSubmit(patient)" [disabled]="!patientForm.form.valid">
+  Zapisz
+</button>

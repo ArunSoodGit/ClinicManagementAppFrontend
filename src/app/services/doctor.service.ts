@@ -24,10 +24,7 @@ export class DoctorService {
   addDoctor(doctor: Doctor): Observable<Doctor> {
     return this.httpClient.post<Doctor>('https://localhost:444/api/doctors', doctor, {headers: this.headers});
   }
-  updateCar(doctor: Doctor): Observable<Doctor> {
-    return this.httpClient.put<Doctor>('https://localhost:444/api/doctors', doctor, {headers: this.headers})
-      ;
-  }
+
   deleteDoctor(id: number): Observable<Doctor> {
     const url = `https://localhost:444/api/doctors/${id}`;
     return this.httpClient.delete<Doctor>(url, {headers: this.headers});

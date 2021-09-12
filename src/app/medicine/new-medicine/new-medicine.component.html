@@ -10,8 +10,6 @@
       <mat-form-field class="full">
         <mat-label>Nazwa</mat-label>
         <input type="text" matInput placeholder="Nazwa" [(ngModel)]="medicine.name" name="name" required="true">
-        <mat-icon matSuffix>verified_user</mat-icon>
-
       </mat-form-field>
     </p>
     <mat-form-field class="element">
@@ -23,19 +21,19 @@
     <mat-form-field class="element2">
       <mat-label>Opakowanie</mat-label>
       <input type="number" matInput placeholder="Opakowanie" [(ngModel)]="medicine.packet" name="packet" required="true">
-      <mat-icon matSuffix>drive_eta</mat-icon>
+      <span matSuffix>tabl.</span>
     </mat-form-field>
 
     <mat-form-field class="element">
       <mat-label>Dawka</mat-label>
       <input type="number" matInput placeholder="Dawka" [(ngModel)]="medicine.dose" name="dose" required="true">
-      <mat-icon matSuffix>drive_eta</mat-icon>
+      <span matSuffix>mg</span>
     </mat-form-field>
 
     <mat-form-field class="element2">
       <mat-label>Cena</mat-label>
       <input type="number" matInput placeholder="Cena" [(ngModel)]="medicine.price" name="price" required="true">
-      <mat-icon matSuffix>drive_eta</mat-icon>
+      <span matSuffix>zł</span>
     </mat-form-field>
 
 

@@ -21,9 +21,9 @@ export class MedicineService {
   addMedicine(medicine: Medicine): Observable<Medicine> {
     return this.httpClient.post<Medicine>('https://localhost:444/api/medicines', medicine, {headers: this.headers});
   }
-  updateMedicine(medicine: Medicine): Observable<Medicine> {
-    return this.httpClient.put<Medicine>('https://localhost:444/medicines', medicine, {headers: this.headers})
-      ;
+  deleteMedicine(id: number): Observable<Medicine> {
+    const url = `https://localhost:444/api/medicines/${id}`;
+    return this.httpClient.delete<Medicine>(url, {headers: this.headers});
   }
 
 }

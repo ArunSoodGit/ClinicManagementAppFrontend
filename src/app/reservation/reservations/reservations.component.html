@@ -15,41 +15,35 @@
 
     <ng-container matColumnDef="Zdjęcie">
       <th mat-header-cell *matHeaderCellDef mat-sort-header></th>
-      <td  mat-cell class="imageTd" *matCellDef="let element"  (click)="show(element)"><img  class="image" src="/assets/images/medical_tablet.png"></td>
+      <td  mat-cell class="imageTd" *matCellDef="let element"  (click)="show(element)"><img  class="image" src="/src/assets/images/waiting_room.png"></td>
     </ng-container>
 
-    <ng-container matColumnDef="Nazwa">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Nazwa</th>
+    <ng-container matColumnDef="Pacjent">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Pacjent</th>
       <td mat-cell *matCellDef="let element" (click)="show(element)"
-          data-label="Nazwa"> {{element.name}} </td>
+          data-label="Pacjent"> {{element.patient.name}} {{element.patient.surname}} </td>
     </ng-container>
 
-    <ng-container matColumnDef="Producent">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Producent</th>
+    <ng-container matColumnDef="Lekarz">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Lekarz</th>
       <td mat-cell *matCellDef="let element" (click)="show(element)"
-          data-label="Producent"> {{element.producer}} </td>
+          data-label="Lekarz"> {{element.doctor.name}} {{element.doctor.surname}} </td>
     </ng-container>
-    <ng-container matColumnDef="Dawka">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Dawka</th>
+    <ng-container matColumnDef="Data">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Data</th>
       <td mat-cell *matCellDef="let element" (click)="show(element)"
-          data-label="Dawka"> {{element.dose}} mg </td>
+          data-label="Data"> {{element.visitDate |date}} </td>
     </ng-container>
-    <ng-container matColumnDef="Opakowanie">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Opakowanie</th>
+    <ng-container matColumnDef="Status">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Status</th>
       <td mat-cell *matCellDef="let element" (click)="show(element)"
-          data-label="Opakowanie"> {{element.packet}} sztk.</td>
+          data-label="Status"> {{element.status}}</td>
     </ng-container>
-    <ng-container matColumnDef="Cena">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Cena</th>
-      <td mat-cell *matCellDef="let element" (click)="show(element)"
-          data-label="Cena"> {{element.price}} zł</td>
-    </ng-container>
-
     <ng-container matColumnDef="edit">
       <th mat-header-cell *matHeaderCellDef mat-sort-header></th>
       <td class="buttonTd" mat-cell *matCellDef="let element; let row">
         <a [matMenuTriggerFor]="menu" mat-button matSuffix mat-stroked-button aria-label="search">
-          <img class="imageEdit" src="assets/images/edit.png">
+          <img class="imageEdit" src="../../../assets/images/edit.png">
         </a>
 
         <mat-menu #menu="matMenu">

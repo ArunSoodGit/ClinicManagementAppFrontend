@@ -28,8 +28,8 @@ export class PatientService {
     return this.httpClient.put<Patient>('https://localhost:444/api/patients', patient, {headers: this.headers})
       ;
   }
-  deletePatient(patientId: number): Observable<Patient> {
-    const url = `https://localhost:444/patients/${patientId}`;
+  removePatient(patientId: number): Observable<Patient> {
+    const url = `https://localhost:444/api/patients/${patientId}`;
     return this.httpClient.delete<Patient>(url, {headers: this.headers});
   }
 
