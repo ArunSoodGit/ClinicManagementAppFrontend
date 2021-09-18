@@ -25,7 +25,7 @@
                                       src="/assets/images/sthetoscope.png"> {{ doctorDescription}}</span>
 
           <app-reservation-doctor-description
-            [(description)]="visitDescription"></app-reservation-doctor-description>
+            [(description)]="visitDescription" [reservation]="reservation"></app-reservation-doctor-description>
           <span class="property"><img class="image" src="/assets/images/medical_tablet.png"> {{ medicines}}</span>
           <form *ngIf="reservation.status =='Zaplanowana'" class="example-form">
             <mat-form-field class="w-50 " >

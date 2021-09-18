@@ -7,24 +7,19 @@ button {
   outline: 0;
 }
 
-.navbar-logo {
-
-  margin-left: 0;
-  background: rgb(24, 73, 103);
-  background: linear-gradient(90deg, rgb(80, 150, 189) 0%, rgb(29, 112, 164) 62%, rgb(9, 76, 112) 100%);
-}
-
 .nav-link {
   padding-left: 20px!important;
   padding-right: 20px!important;
   color: #ffffff !important;
-  border-right: 1px solid rgba(255, 255, 255, 0.2);
-  width: 120px;
+  width: 60px;
   text-align: center;
+}
+.navbar-nav{
+  margin-top: 20px;
 }
 
 .icon {
-  font-size: 18px;
+  font-size: 22px;
   color: #ffffff;
 }
 .drive_eta{
@@ -55,11 +50,10 @@ button {
 
 .sticky-top {
   position: fixed;
-  top: 46px;
   width: 100%;
   z-index: 4;
-  background: rgb(24, 73, 103);
-  background: linear-gradient(90deg, rgb(80, 150, 189) 0%, rgb(29, 112, 164) 62%, rgb(9, 76, 112) 100%);
+   background-color: #5ca6b2  !important;
+  //background: linear-gradient(90deg, rgb(80, 150, 189) 0%, rgb(29, 112, 164) 62%, rgb(9, 76, 112) 100%);
 }
 
 .sticky-top2 {
@@ -80,5 +74,5 @@ button {
 }
 
 .nav-link:hover {
-  background-color: #219bc7;
+  background-color: #25233f;
 }

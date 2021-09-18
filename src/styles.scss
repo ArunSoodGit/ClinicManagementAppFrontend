@@ -1,13 +1,186 @@
 @import "~bootstrap/dist/css/bootstrap.css";
-
-
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;}
-
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 /* Importing Bootstrap SCSS file. */
 @import '~bootstrap/scss/bootstrap';
+//html, body { height: 100%; }
+body { margin: 0; font-family: 'Poppins', sans-serif;}
+
+
+.mat-menu-content {
+  background-color: #11101d;
+  .mat-menu-item {
+    color: white;
+  }
+
+}
+
+.mat-sort-header-content{
+  font-size: 16px;
+  color: white;
+}
+.mat-table{
+  width: 100%;
+  background-color: #0e1223;
+  th, td {
+    color:white;
+  }
+  tr.mat-row:hover, tr.mat-footer-row:hover{
+    color: white!important;
+    background-color: #1d1b31!important;
+
+  }
+  img {
+    margin-right: 10px;
+    width: 70px;
+    height: 40px;
+    object-fit: contain;
+    cursor: pointer;
+    outline: 0;
+  }
+  .imageEdit{
+    width: 50px;
+    height: 30px;
+  }
+}
+
+.mat-card-subtitle{
+  color: white;
+}
+
+.mat-form-field-appearance-legacy .mat-form-field-label {
+  color: white;
+}
+.mat-paginator-container{
+  background-color: #0e1223;
+  .mat-paginator-icon, .mat-paginator-range-label, .mat-paginator-page-size-label{
+    color: white;
+  }
+  .mat-paginator-icon:hover, .mat-paginator-range-label, .mat-paginator-page-size-label{
+    background-color: #1d1b31!important;
+
+  }
+}
+.list-group-item{
+  background-color:  #0e1223!important;
+}
+.mat-card{
+  background-color: #0e1223;
+  color: white;
+}
+.mat-dialog-container{
+  background-color:  #11101d;
+  color: white;
+
+}
+.mat-select-value{
+  color: white;
+}
+.mat-option{
+  background-color: #11101d;
+  color: white;
+}
+.mat-option:hover, .mat-active{
+  background-color: #1d1b31!important;
+  color: white!important;
+}
+.add-icon {
+  background-color: #0e1223!important;
+  color: white!important;
+}
+.add-icon:hover {
+  background-color: #1d1b31 !important;
+  cursor: pointer!important;
+}
+
+.rentals:hover {
+  box-shadow: 0 1rem 3rem 0 rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+button {
+  outline: 0;
+
+  .mat-icon {
+    color: white;
+  }
+}
+.form-control{
+  background-color: #0e1223!important;
+  color: white!important;
+  border: solid 1px rgba(0, 0, 0, 0.125)!important;
+}
+
 .list-group-item{
 border-bottom: none!important;
 }
 
+.mat-datepicker-toggle-default-icon, .mat-select-arrow{
+  color: white;
+}
 
+
+@media screen and (max-width: 720px) {
+
+  .mat-row:hover {
+    box-shadow: 0 0.5rem 2rem 0 rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+
+  }
+
+  table .mat-row {
+    border-bottom: 7px solid #ddd !important;
+
+  }
+
+  table th {
+
+    border: 10px solid;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+
+
+  table td {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    font-size: 1em;
+    text-align: right;
+    font-weight: bold;
+    height: 20px;
+    width: 100%;
+    padding: 7% 24px;
+  }
+  .imageTd {
+    margin-bottom: 40px !important;
+    border: none !important;
+    text-align: center !important;
+  }
+  .buttonTd {
+    padding: 0 !important;
+    margin-bottom: 20px !important;
+    margin-top: 5px !important;
+    text-align: center !important;
+
+    button {
+      width: 50%;
+
+    }
+  }
+  table td:before {
+    content: attr(data-label);
+    float: left;
+    text-transform: uppercase;
+    font-weight: normal;
+
+    font-size: .85em;
+  }
+  table td:last-child {
+    border-bottom: 0;
+  }
+  table .td:first-child {
+    margin-top: 2%;
+  }
+}

@@ -1,35 +1,5 @@
-button {
-  outline: 0;
-
-  .mat-icon {
-    color: black;
-  }
-}
 
 
-table {
-  width: 100%;
-
-
-  img {
-    margin-right: 10px;
-    width: 70px;
-    height: 40px;
-    object-fit: contain;
-    cursor: pointer;
-    outline: 0;
-  }
-  .imageEdit{
-    width: 50px;
-    height: 30px;
-  }
-
-  .mat-row:hover {
-    background-color: aliceblue;
-
-  }
-
-}
 
 .mat-form-field {
   font-size: 14px;
@@ -121,8 +91,4 @@ td, th {
 }
 .mat-stroked-button{
   border: none;
-}
-.add-icon{
-  background-color: #f3f8fc;
-  color: white;
 }

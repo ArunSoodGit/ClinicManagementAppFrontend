@@ -2,7 +2,7 @@
   <mat-icon>close</mat-icon>
 </button>
 <div mat-dialog-title>
-  <h1 class="title"> Dodaj Lekarza</h1>
+  <h1 class="title"> Edytuj dane Lekarza</h1>
 </div>
 <div mat-dialog-content>
   <form #carForm="ngForm" (ngSubmit)="carForm.form.valid && onSubmit(doctor)" class="example-form">
@@ -45,6 +45,6 @@
   </form>
 </div>
 
-<button mat-raised-button class="create" (click)="onSubmit(doctor)" [disabled]="!carForm.form.valid">
+<button mat-raised-button class="add-icon float-right" (click)="onSubmit(doctor)" [disabled]="!carForm.form.valid">
   Zapisz
 </button>

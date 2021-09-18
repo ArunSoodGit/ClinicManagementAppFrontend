@@ -1,41 +1,46 @@
-<div *ngIf="authenticationService.isUserLoggedIn()" class="container">
-  <div class="info">
-
-<!--    <img class="image"-->
-<!--         src="assets/avatar2.png">-->
-    <a class="user">
-      Arun Sood
-    </a>
-    <mat-icon class="dioda">fiber_manual_record</mat-icon>
+<div *ngIf="authenticationService.isUserLoggedIn()" class="sidebar">
+  <div class="logo-details">
+    <i class='bx bx-clinic'></i>
+    <span class="logo_name">MyClinic</span>
   </div>
 
-  <ul class="listContainer">
+  <ul class="nav-links">
     <li>
-      <button routerLink="/cars" (click)="onToggleSidenav()">
-        <mat-icon class="icon1">drive_eta</mat-icon>
-        <span class="nav-caption">Flota</span>
-      </button>
-    </li>
-    <li>
-      <button routerLink="/customers" (click)="onToggleSidenav()">
-        <mat-icon class="icon2">people</mat-icon>
-        <span class="nav-caption">Klienci</span>
-      </button>
-    </li>
-    <li>
-      <button routerLink="/rentals" (click)="onToggleSidenav()">
-        <mat-icon class="icon3">view_list</mat-icon>
-        <span class="nav-caption">Rezerwacje</span>
-      </button>
+      <a routerLink="/doctors">
+        <i class='bx bx-user' ></i>
+        <span class="link_name">Lekarze</span>
+      </a>
     </li>
 
-    <li class="logout">
-      <a class="nav-link" *ngIf="authenticationService.isUserLoggedIn()" href="/logout">
-        <button *ngIf="authenticationService.isUserLoggedIn()" href="/logout">
-          <i class="fa fa-sign-out icon "></i>
-          <span class="nav-caption">Wylogowanie</span>
-        </button>
+    <li>
+      <a routerLink="/patients">
+        <i class='bx bx-group' ></i>
+        <span class="link_name">Pacjenci</span>
       </a>
+    </li>
+    <li>
+      <a routerLink="/medicines">
+        <i class='bx bx-capsule' ></i>
+        <span class="link_name">Leki</span>
+      </a>
+    </li>
+    <li>
+      <a routerLink="/reservations">
+        <i class='bx bx-calendar-week' ></i>
+        <span class="link_name">Wizyty</span>
+      </a>
+    </li>
+    <li>
+      <div class="profile-details">
+        <div class="profile-content">
+
+        </div>
+        <div class="name-job">
+          <div class="profile_name">Arun Sood</div>
+          <div class="job">Web Desginer</div>
+        </div>
+        <i class='bx bx-log-out' ></i>
+      </div>
     </li>
   </ul>
 </div>

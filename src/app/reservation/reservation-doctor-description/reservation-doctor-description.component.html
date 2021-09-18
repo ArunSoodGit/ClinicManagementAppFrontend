@@ -1,3 +1,4 @@
 <div class="form-group">
-  <textarea [(ngModel)]="description" (ngModelChange)="test()" class="form-control" id="description" rows="6"></textarea>
+  <textarea [(ngModel)]="description" (ngModelChange)="test()" class="form-control" [disabled]="disable"  id="description" rows="6"></textarea>
 </div>
+
