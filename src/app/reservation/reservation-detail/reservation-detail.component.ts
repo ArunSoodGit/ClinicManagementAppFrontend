@@ -11,7 +11,7 @@ import {Patient} from "../../models/Patient";
 import {FormControl} from "@angular/forms";
 import {MedicineService} from "../../services/medicine.service";
 import {Medicine} from "../../models/Medicine";
-import {Status} from "../../Status";
+import {Status} from "../../models/Status";
 
 @Component({
   selector: 'app-reservation-detail',

@@ -4,7 +4,7 @@ import {MatSnackBar} from "@angular/material/snack-bar";
 import {Doctor} from "../../models/Doctor";
 import {DoctorService} from "../../services/doctor.service";
 import {Patient} from "../../models/Patient";
-import {PatientService} from "../../patient.service";
+import {PatientService} from "../../services/patient.service";
 
 @Component({
   selector: 'app-remove-patient',

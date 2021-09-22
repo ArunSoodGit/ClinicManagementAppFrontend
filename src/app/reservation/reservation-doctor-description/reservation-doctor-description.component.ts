@@ -1,6 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Reservation} from "../../models/Reservation";
-import {Status} from "../../Status";
+import {Status} from "../../models/Status";
 
 
 @Component({

@@ -20,7 +20,9 @@
     background: #1d1b31;
     padding: 12px 0;
     transition: all 0.5s ease;
-
+    .profile_name{
+      color:white;
+    }
     .job{
       font-size: 12px;
       color: #fff;
@@ -47,11 +49,15 @@
   z-index: 100;
   transition: all 0.5s ease;
 
+
   .logo-details{
     height: 60px;
     width: 100%;
     display: flex;
     align-items: center;
+    .clinic-logo{
+      color: red;
+    }
     .logo_name{
       font-size: 22px;
       color: #fff;

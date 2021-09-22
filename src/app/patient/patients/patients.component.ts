@@ -6,7 +6,7 @@ import {Router} from "@angular/router";
 import {DoctorService} from "../../services/doctor.service";
 import {MatDialog} from "@angular/material/dialog";
 import {MatTableDataSource} from "@angular/material/table";
-import {PatientService} from "../../patient.service";
+import {PatientService} from "../../services/patient.service";
 import {Patient} from "../../models/Patient";
 import {RemovePatientComponent} from "../remove-patient/remove-patient.component";
 import {NewPatientComponent} from "../new-patient/new-patient.component";

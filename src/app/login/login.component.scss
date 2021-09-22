@@ -1,14 +1,25 @@
-.card-signin {
+.card-sign-in {
   border: 0;
   border-radius: 1rem;
   box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+.card-body{
+  padding: 2rem;
 
+  background-color: #0e1223 ;
+  color: white;
+
+}
+  .card-title {
+    margin-bottom: 3rem;
+    font-weight: 300;
+    font-size: 1.8rem;
+  }
 }
 
 button {
   margin-top: 50px;
   font-size: 80%;
-  border-radius: 15px;
+
   letter-spacing: .1rem;
   font-weight: bold;
   padding: 0.8rem;
@@ -24,16 +35,7 @@ input {
   margin-bottom: 30px;
 }
 
-.card-signin .card-title {
-  margin-bottom: 3rem;
-  font-weight: 300;
-  font-size: 1.8rem;
-}
 
-.card-signin .card-body {
-  padding: 2rem;
-
-}
 
 
 .container {
@@ -42,9 +44,9 @@ input {
 
 
 .btn-primary {
-  background: linear-gradient(90deg, rgb(110, 178, 163) 0%, rgb(79, 134, 122) 62%, rgb(51, 86, 78) 100%);
-  border-color: rgb(122, 166, 156);
-  border-radius: 8px;
+  background-color: #0e1223!important;
+  color: white!important;
+  border: none;
 
 }
 
@@ -54,7 +56,6 @@ input {
 }
 
 .btn-primary:hover {
-  background: linear-gradient(90deg, rgb(110, 178, 163) 0%, rgb(79, 134, 122) 62%, rgb(51, 86, 78) 100%);
-  border-color: rgb(51, 86, 78);
-
+  background-color: #1d1b31 !important;
+  color: white!important;
 }

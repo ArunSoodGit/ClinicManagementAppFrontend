@@ -6,7 +6,7 @@ import {DoctorService} from "../../services/doctor.service";
 import {ReservationService} from "../../services/reservation.service";
 import {MatDialog} from "@angular/material/dialog";
 import {Patient} from "../../models/Patient";
-import {PatientService} from "../../patient.service";
+import {PatientService} from "../../services/patient.service";
 
 @Component({
   selector: 'app-patient-detail',

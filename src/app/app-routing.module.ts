@@ -14,6 +14,7 @@ import {ReservationMedicinesComponent} from "./reservation/reservation-medicines
 import {ReservationDetailInfoComponent} from "./reservation/reservation-detail-info/reservation-detail-info.component";
 import {ReservationsComponent} from "./reservation/reservations/reservations.component";
 import {MedicinesComponent} from "./medicine/medicines/medicines.component";
+import {HomeComponent} from "./home/home.component";
 
 const routes: Routes = [
   {path: '', component: LoginComponent},
@@ -27,7 +28,7 @@ const routes: Routes = [
   {path: 'reservations/:id', component: ReservationDetailComponent, canActivate: [AuthGuardService] },
   {path: 'medicines', component: MedicinesComponent, canActivate: [AuthGuardService] },
   {path: 'reservation-medicines/:id', component: MedicineDetailComponent, canActivate: [AuthGuardService] },
-  // {path: 'rentals', component: AllRentalsComponent, canActivate: [AuthGaurdService] },
+  {path: 'home', component: HomeComponent, canActivate: [AuthGuardService] },
   // {path: 'editCar', component: EditCarComponent, canActivate: [AuthGaurdService] },
   // {path: 'editCustomer', component: EditCustomerComponent, canActivate: [AuthGaurdService] },
   // {path: 'editRental', component: EditRentalComponent, canActivate: [AuthGaurdService] },

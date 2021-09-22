@@ -1,30 +1,30 @@
 <div *ngIf="authenticationService.isUserLoggedIn()" class="sidebar">
   <div class="logo-details">
-    <i class='bx bx-clinic'></i>
+    <i class='bx bx-clinic clinic-logo'></i>
     <span class="logo_name">MyClinic</span>
   </div>
 
   <ul class="nav-links">
-    <li>
+    <li *ngIf="authenticationService.isRoleAdmin()">
       <a routerLink="/doctors">
         <i class='bx bx-user' ></i>
         <span class="link_name">Lekarze</span>
       </a>
     </li>
 
-    <li>
+    <li *ngIf="authenticationService.isRoleAdmin()">
       <a routerLink="/patients">
         <i class='bx bx-group' ></i>
         <span class="link_name">Pacjenci</span>
       </a>
     </li>
-    <li>
+    <li *ngIf="authenticationService.isRoleAdmin()">
       <a routerLink="/medicines">
         <i class='bx bx-capsule' ></i>
         <span class="link_name">Leki</span>
       </a>
     </li>
-    <li>
+    <li >
       <a routerLink="/reservations">
         <i class='bx bx-calendar-week' ></i>
         <span class="link_name">Wizyty</span>
@@ -39,7 +39,9 @@
           <div class="profile_name">Arun Sood</div>
           <div class="job">Web Desginer</div>
         </div>
+        <a routerLink="/logout">
         <i class='bx bx-log-out' ></i>
+        </a>
       </div>
     </li>
   </ul>

@@ -3,12 +3,12 @@ import {Patient} from "../../models/Patient";
 import {Doctor} from "../../models/Doctor";
 import {Reservation} from "../../models/Reservation";
 import {Router} from "@angular/router";
-import {PatientService} from "../../patient.service";
+import {PatientService} from "../../services/patient.service";
 import {DoctorService} from "../../services/doctor.service";
 import {ReservationService} from "../../services/reservation.service";
 import {MatSnackBar} from "@angular/material/snack-bar";
 import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
-import {Status} from "../../Status";
+import {Status} from "../../models/Status";
 
 @Component({
   selector: 'app-new-reservation',

@@ -1,17 +1,18 @@
 import {ChangeDetectorRef, Component, OnInit, ViewChild} from '@angular/core';
-import {Medicine} from "../../models/Medicine";
 import {MatSort} from "@angular/material/sort";
 import {MatPaginator} from "@angular/material/paginator";
 import {Router} from "@angular/router";
-import {MedicineService} from "../../services/medicine.service";
 import {MatDialog} from "@angular/material/dialog";
 import {MatTableDataSource} from "@angular/material/table";
 import {RemoveDoctorComponent} from "../../doctor/remove-doctor/remove-doctor.component";
-import {NewDoctorComponent} from "../../doctor/new-doctor/new-doctor.component";
 import {EditDoctorComponent} from "../../doctor/edit-doctor/edit-doctor.component";
 import {ReservationService} from "../../services/reservation.service";
 import {Reservation} from "../../models/Reservation";
 import {NewReservationComponent} from "../new-reservation/new-reservation.component";
+import {AuthenticationService, User} from "../../services/authentication.service";
+import {UserService} from "../../services/user.service";
+import {Doctor} from "../../models/Doctor";
+import {RemoveReservationComponent} from "../remove-reservation/remove-reservation.component";
 
 @Component({
   selector: 'app-reservations',
@@ -20,22 +21,30 @@ import {NewReservationComponent} from "../new-reservation/new-reservation.compon
 })
 export class ReservationsComponent implements OnInit {
 
-  displayedColumns: string[] = ['Zdjęcie', 'Pacjent', 'Lekarz', 'Data','Status', 'edit'];
+  displayedColumns: string[] = ['Zdjęcie', 'Pacjent', 'Lekarz', 'Data', 'Status', 'edit'];
   reservation?: Reservation;
   dataSource: any;
-  customer:any;
+  customer: any;
+  user!: User;
 
   @ViewChild(MatSort, {static: true}) sort!: MatSort;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
   constructor(private router: Router, private reservationService: ReservationService, private dialog: MatDialog,
-              private changeDetectorRefs: ChangeDetectorRef) {
+              private changeDetectorRefs: ChangeDetectorRef, private authenticationService: AuthenticationService, private userService: UserService) {
   }
+
   ngAfterViewInit(): void {
   }
 
   ngOnInit(): void {
-    this.refresh();
+
+    if (this.authenticationService.isRoleAdmin()) {
+      this.refresh();
+    } else {
+      this.user = JSON.parse(<string>sessionStorage.getItem("user"));
+      this.getDataForDoctor(this.user.doctor);
+    }
   }
 
 
@@ -43,6 +52,21 @@ export class ReservationsComponent implements OnInit {
     this.dataSource.filter = (event.target as HTMLInputElement).value;
   }
 
+  getDataForDoctor(doctor: Doctor): void {
+    this.reservationService.getReservationsForDoctor(doctor).subscribe(doctor => {
+        this.changeDetectorRefs.detectChanges();
+        console.log(doctor);
+        this.dataSource = new MatTableDataSource(doctor);
+        this.dataSource.paginator = this.paginator;
+
+        this.dataSource.filterPredicate = (data: Reservation, filter: any) => {
+          const dataStr = data.id + data.patient.name + data.doctor.name + data.doctor.surname
+            + data.patient.surname;
+          return dataStr.indexOf(filter) !== -1;
+        };
+      }
+    );
+  }
 
   refresh(): void {
     this.reservationService.getReservations().subscribe(reservation => {
@@ -51,7 +75,7 @@ export class ReservationsComponent implements OnInit {
         this.dataSource = new MatTableDataSource(reservation);
         this.dataSource.paginator = this.paginator;
 
-        this.dataSource.filterPredicate = (data:Reservation, filter:any) => {
+        this.dataSource.filterPredicate = (data: Reservation, filter: any) => {
           const dataStr = data.id + data.patient.name + data.doctor.name + data.doctor.surname
             + data.patient.surname;
           return dataStr.indexOf(filter) !== -1;
@@ -61,7 +85,7 @@ export class ReservationsComponent implements OnInit {
   }
 
   onRemove(reservation: Reservation): void {
-    const dialogRef = this.dialog.open(RemoveDoctorComponent, {
+    const dialogRef = this.dialog.open(RemoveReservationComponent, {
       width: '480px',
       panelClass: 'icon-outside',
       data: reservation

@@ -53,6 +53,8 @@ import { EditPatientComponent } from './patient/edit-patient/edit-patient.compon
 import { RemovePatientComponent } from './patient/remove-patient/remove-patient.component';
 import { RemoveMedicineComponent } from './medicine/remove-medicine/remove-medicine.component';
 import {MatAutocompleteModule} from "@angular/material/autocomplete";
+import { HomeComponent } from './home/home.component';
+import { RemoveReservationComponent } from './reservation/remove-reservation/remove-reservation.component';
 
 @NgModule({
   declarations: [
@@ -84,6 +86,8 @@ import {MatAutocompleteModule} from "@angular/material/autocomplete";
     EditPatientComponent,
     RemovePatientComponent,
     RemoveMedicineComponent,
+    HomeComponent,
+    RemoveReservationComponent,
 
   ],
   imports: [

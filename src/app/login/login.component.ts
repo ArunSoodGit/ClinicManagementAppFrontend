@@ -1,8 +1,10 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
-import {AuthenticationService} from "../services/authentication.service";
+import {AuthenticationService, User} from "../services/authentication.service";
 import {MatSnackBar} from "@angular/material/snack-bar";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {UserService} from "../services/user.service";
+import {Role} from "../models/Role";
 
 @Component({
   selector: 'app-login',
@@ -10,7 +12,7 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-
+  user!: User;
   username = '';
   password = '';
   submitted = false;
@@ -18,10 +20,11 @@ export class LoginComponent implements OnInit {
   invalidateClass = '';
   loginForm: FormGroup | any;
   @Input() error: string | null | undefined;
+  private isAdmin: boolean = false;
 
   constructor(private router: Router, private authService: AuthenticationService,
               private snackBar: MatSnackBar,
-              private formBuilder: FormBuilder) {
+              private formBuilder: FormBuilder, private userService: UserService) {
   }
 
   get f() {
@@ -42,7 +45,7 @@ export class LoginComponent implements OnInit {
     }
     (this.authService.authenticate(this.username, this.password).subscribe(
         () => {
-          this.router.navigate(['doctors']);
+          this.router.navigate(['home']);
           this.invalidLogin = false;
           this.invalidateClass = 'yes';
           this.snackBar.open('Zalogowano pomyślnie', 'OK', {

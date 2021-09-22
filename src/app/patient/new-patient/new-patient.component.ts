@@ -7,7 +7,7 @@ import {DoctorService} from "../../services/doctor.service";
 import {MatSnackBar} from "@angular/material/snack-bar";
 import {MatDialogRef} from "@angular/material/dialog";
 import {Patient} from "../../models/Patient";
-import {PatientService} from "../../patient.service";
+import {PatientService} from "../../services/patient.service";
 
 @Component({
   selector: 'app-new-patient',

@@ -18,61 +18,15 @@ button {
   margin-top: 20px;
 }
 
-.icon {
-  font-size: 22px;
-  color: #ffffff;
-}
-.drive_eta{
-  border: none;
-}
-
-.icon2 {
-  font-size: 18px;
-  color: #ffffff;
-}
-
-.icon3 {
-  font-size: 18px;
-  color: #ffffff;
-}
-
-.logout-icon {
-  font-size: 22px;
-  color: white;
-  border: none;
-}
-
-.navbar-brand {
-  letter-spacing: 4px;
-  color: white;
-
-}
 
 .sticky-top {
   position: fixed;
   width: 100%;
   z-index: 4;
    background-color: #5ca6b2  !important;
-  //background: linear-gradient(90deg, rgb(80, 150, 189) 0%, rgb(29, 112, 164) 62%, rgb(9, 76, 112) 100%);
 }
 
-.sticky-top2 {
-  position: fixed;
-  top: 0px;
-  width: 100%;
-  z-index: 3;
-
-}
-
-.menu {
-  color: white;
-}
-
-.date {
-  color: white;
-  font-size: 20px;
-}
 
 .nav-link:hover {
-  background-color: #25233f;
+  background-color: #5fabb7;
 }
