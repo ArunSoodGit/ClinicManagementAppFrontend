@@ -91,7 +91,31 @@ body { margin: 0; font-family: 'Poppins', sans-serif;}
   background-color: #1d1b31 !important;
   cursor: pointer!important;
 }
-
+.mat-datepicker-content .mat-calendar{
+  background-color: #1d1b31;
+  color: white;
+}
+.mat-calendar-body-cell-content {
+  color: white;
+}
+.mat-calendar-table-header th {
+  color: white;
+}
+.mat-input-element {
+  color: white!important;
+}
+.mat-calendar-body-label{
+  color: white;
+}
+.mat-calendar-table-header-divider::after {
+background-color: #5ca6b2;
+}
+.mat-calendar-arrow{
+  fill: white;
+}
+.mat-calendar-previous-button::after, .mat-calendar-next-button::after {
+color: white;
+}
 .rentals:hover {
   box-shadow: 0 1rem 3rem 0 rgba(0, 0, 0, 0.2);
   cursor: pointer;
