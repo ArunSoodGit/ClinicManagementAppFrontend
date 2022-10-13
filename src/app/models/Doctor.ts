@@ -10,6 +10,4 @@ export class Doctor {
   room!: Room;
   specialization!: Specialization;
   reservation!: Reservation[];
-
-
 }

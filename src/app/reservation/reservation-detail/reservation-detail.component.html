@@ -31,7 +31,7 @@
             <mat-form-field class="w-50 " >
               <mat-label>Wybierz lekrastwa</mat-label>
               <mat-select [formControl]="myControl" multiple >
-                <mat-option *ngFor="let medicine of medicinesList" #matOption (click)="addMedicines(matOption.value, matOption.selected)" [value]="medicine">{{medicine.name}}</mat-option>
+                <mat-option *ngFor="let medicine of medicinesList" #matOption (click)="addMedicine(matOption.value, matOption.selected)" [value]="medicine">{{medicine.name}}</mat-option>
               </mat-select>
             </mat-form-field>
           </form>

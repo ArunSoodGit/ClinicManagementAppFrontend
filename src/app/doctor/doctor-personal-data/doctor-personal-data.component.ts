@@ -1,11 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
-import {ReservationService} from "../../services/reservation.service";
-import {PrescriptionService} from "../../services/prescription.service";
-import {DatePipe} from "@angular/common";
-import {MatDialog} from "@angular/material/dialog";
-import {Reservation} from "../../models/Reservation";
-import {Prescription} from "../../models/Prescription";
 import {Doctor} from "../../models/Doctor";
 
 @Component({
@@ -17,13 +11,7 @@ export class DoctorPersonalDataComponent implements OnInit {
 
   @Input() doctor!: Doctor;
 
-  visitDescription!: string;
-
-  constructor(private router: Router, private route: ActivatedRoute,
-              private reservationService: ReservationService,
-              private prescriptionService: PrescriptionService,
-              public datePipe: DatePipe,
-              private dialog: MatDialog) {
+  constructor(private router: Router) {
   }
 
   ngOnInit(): void {
@@ -31,6 +19,5 @@ export class DoctorPersonalDataComponent implements OnInit {
 
   showDoctor(): void {
     this.router.navigate(['/doctors', this.doctor.id]);
-
   }
 }

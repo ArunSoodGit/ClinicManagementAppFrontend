@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {Reservation} from "../models/Reservation";
@@ -10,28 +10,29 @@ import {Patient} from "../models/Patient";
 })
 export class ReservationService {
   private headers = new HttpHeaders({'Content-Type': 'application/json'});
+  private BASE_URL = 'https://localhost:444/api/v1';
 
-  constructor(private httpClient: HttpClient) {  }
+  constructor(private httpClient: HttpClient) {
+  }
 
   getReservations(): Observable<Reservation[]> {
-    return this.httpClient.get<Reservation[]>('https://localhost:444/api/v1/reservations');
+    return this.httpClient.get<Reservation[]>(this.BASE_URL + '/reservations');
   }
 
-  getReservationsForDoctor(doctor:Doctor): Observable<Reservation[]> {
-    return this.httpClient.post<Reservation[]>('https://localhost:444/api/v1/doctors/reservations', doctor, {headers: this.headers});
+  getReservationsForDoctor(doctor: Doctor): Observable<Reservation[]> {
+    return this.httpClient.post<Reservation[]>(this.BASE_URL + '/doctors/reservations', doctor, {headers: this.headers});
   }
-  getReservationsForPatient(patient:Patient): Observable<Reservation[]> {
-    return this.httpClient.post<Reservation[]>('https://localhost:444/api/v1/patients/reservations', patient, {headers: this.headers});
+
+  getReservationsForPatient(patient: Patient): Observable<Reservation[]> {
+    return this.httpClient.post<Reservation[]>(this.BASE_URL + '/patients/reservations', patient, {headers: this.headers});
   }
 
   addReservation(Reservation: Reservation): Observable<Reservation> {
-    return this.httpClient.post<Reservation>('https://localhost:444/api/v1/reservations', Reservation, {headers: this.headers});
+    return this.httpClient.post<Reservation>(this.BASE_URL + '/reservations', Reservation, {headers: this.headers});
   }
-  updateReservation(Reservation: Reservation): Observable<Reservation> {
-    return this.httpClient.put<Reservation>('https://localhost:444/api/v1/reservations', Reservation, {headers: this.headers});
-  }
+
   getReservationById(id: number): Observable<Reservation> {
-    const url = `https://localhost:444/api/v1/reservations/${id}`;
+    const url = this.BASE_URL + '/reservations/${id}';
     return this.httpClient.get<Reservation>(url);
   }
 

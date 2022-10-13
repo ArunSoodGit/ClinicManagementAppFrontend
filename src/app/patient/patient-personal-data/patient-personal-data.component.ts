@@ -1,11 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Reservation} from "../../models/Reservation";
-import {Prescription} from "../../models/Prescription";
-import {ActivatedRoute, Router} from "@angular/router";
-import {ReservationService} from "../../services/reservation.service";
-import {PrescriptionService} from "../../services/prescription.service";
-import {DatePipe} from "@angular/common";
-import {MatDialog} from "@angular/material/dialog";
+import {Router} from "@angular/router";
 import {Patient} from "../../models/Patient";
 
 @Component({
@@ -16,11 +10,7 @@ import {Patient} from "../../models/Patient";
 export class PatientPersonalDataComponent implements OnInit {
   @Input() patient!: Patient;
 
-  constructor(private router: Router, private route: ActivatedRoute,
-              private reservationService: ReservationService,
-              private prescriptionService: PrescriptionService,
-              public datePipe: DatePipe,
-              private dialog: MatDialog) {
+  constructor(private router: Router) {
   }
 
   ngOnInit(): void {

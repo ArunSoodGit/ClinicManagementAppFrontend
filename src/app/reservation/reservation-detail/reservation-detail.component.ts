@@ -2,10 +2,7 @@ import {Component} from '@angular/core';
 import {Reservation} from "../../models/Reservation";
 import {ActivatedRoute, Router} from "@angular/router";
 import {ReservationService} from "../../services/reservation.service";
-import {MatDialog} from "@angular/material/dialog";
 import {Prescription} from "../../models/Prescription";
-import {PrescriptionService} from "../../services/prescription.service";
-import {DatePipe} from "@angular/common";
 import {Doctor} from "../../models/Doctor";
 import {Patient} from "../../models/Patient";
 import {FormControl} from "@angular/forms";
@@ -37,17 +34,15 @@ export class ReservationDetailComponent {
 
   constructor(private router: Router, private route: ActivatedRoute,
               private reservationService: ReservationService,
-              private prescriptionService: PrescriptionService,
               private medicineService: MedicineService,
-              public datePipe: DatePipe,
-              private dialog: MatDialog) {
+  ) {
     this.getReservation();
 
     this.medicineService.getMedicines().subscribe(medicine => this.medicinesList = medicine);
   }
 
   accept(): void {
-     this.reservation.status = Status.FINISHED;
+    this.reservation.status = Status.FINISHED;
     this.reservation.description = this.visitDescription;
     this.prescription.medicines = this.selectedMedicines;
     this.reservation.prescription = this.prescription;
@@ -76,15 +71,13 @@ export class ReservationDetailComponent {
       })
   }
 
-
-  addMedicines(medicine: Medicine, isSelected: boolean) {
+  addMedicine(medicine: Medicine, isSelected: boolean) {
     console.log(medicine);
     if (isSelected) {
       this.selectedMedicines.push(medicine);
     } else {
       let index = this.selectedMedicines.indexOf(medicine);
       this.selectedMedicines.splice(index, 1);
-
     }
   }
 }

@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {HttpClient, HttpHeaders} from "@angular/common/http";
+import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {User} from "./authentication.service";
 
@@ -7,24 +7,14 @@ import {User} from "./authentication.service";
   providedIn: 'root'
 })
 export class UserService {
-  users: User[] = [];
-
-  private headers = new HttpHeaders({'Content-Type': 'application/json'});
+  private BASE_URL = 'https://localhost:444/api/v1';
 
   constructor(private httpClient: HttpClient) {
   }
 
   getUserByUserName(userName: string | null): Observable<User> {
-    const url = `https://localhost:444/api/v1/users/${userName}`;
+    const url = this.BASE_URL + '/users/${userName}';
     return this.httpClient.get<User>(url);
   }
 
-  save(user: User) {
-    this.users.push(user);
-  }
-
-  getUser(): User[] {
-
-    return this.users;
-  }
 }
