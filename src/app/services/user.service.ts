@@ -15,7 +15,7 @@ export class UserService {
   }
 
   getUserByUserName(userName: string | null): Observable<User> {
-    const url = `https://localhost:444/api/users/${userName}`;
+    const url = `https://localhost:444/api/v1/users/${userName}`;
     return this.httpClient.get<User>(url);
   }
 

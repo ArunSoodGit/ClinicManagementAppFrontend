@@ -16,13 +16,13 @@ export class MedicineService {
   }
 
   getMedicines(): Observable<Medicine[]> {
-    return this.httpClient.get<Medicine[]>('https://localhost:444/api/medicines');
+    return this.httpClient.get<Medicine[]>('https://localhost:444/api/v1/medicines');
   }
   addMedicine(medicine: Medicine): Observable<Medicine> {
-    return this.httpClient.post<Medicine>('https://localhost:444/api/medicines', medicine, {headers: this.headers});
+    return this.httpClient.post<Medicine>('https://localhost:444/api/v1/medicines', medicine, {headers: this.headers});
   }
   deleteMedicine(id: number): Observable<Medicine> {
-    const url = `https://localhost:444/api/medicines/${id}`;
+    const url = `https://localhost:444/api/v1/medicines/${id}`;
     return this.httpClient.delete<Medicine>(url, {headers: this.headers});
   }
 

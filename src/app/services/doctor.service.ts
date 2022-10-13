@@ -14,19 +14,19 @@ export class DoctorService {
   }
 
   getDoctors(): Observable<Doctor[]> {
-    return this.httpClient.get<Doctor[]>('https://localhost:444/api/doctors');
+    return this.httpClient.get<Doctor[]>('https://localhost:444/api/v1/doctors');
   }
   getDoctorById(doctorId: number): Observable<Doctor> {
-    const url = `https://localhost:444/api/doctors/${doctorId}`;
+    const url = `https://localhost:444/api/v1/doctors/${doctorId}`;
     return this.httpClient.get<Doctor>(url);
   }
 
   addDoctor(doctor: Doctor): Observable<Doctor> {
-    return this.httpClient.post<Doctor>('https://localhost:444/api/doctors', doctor, {headers: this.headers});
+    return this.httpClient.post<Doctor>('https://localhost:444/api/v1/doctors', doctor, {headers: this.headers});
   }
 
   deleteDoctor(id: number): Observable<Doctor> {
-    const url = `https://localhost:444/api/doctors/${id}`;
+    const url = `https://localhost:444/api/v1/doctors/${id}`;
     return this.httpClient.delete<Doctor>(url, {headers: this.headers});
   }
   // getRentalByCar(vin: string): Observable<Rental>  {

@@ -33,7 +33,7 @@ export class AuthenticationService {
   authenticate(username: string, password: string): any {
 
     const headers = new HttpHeaders({Authorization: 'Basic ' + btoa(username + ':' + password)});
-    return this.httpClient.get<User>('https://localhost:444/api/validateLogin', {headers}).pipe(
+    return this.httpClient.get<User>('https://localhost:444/api/v1/validate-login', {headers}).pipe(
       map(
         userData => {
           const authString = 'Basic ' + btoa(username + ':' + password);

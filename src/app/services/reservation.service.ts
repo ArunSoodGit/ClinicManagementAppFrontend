@@ -14,29 +14,29 @@ export class ReservationService {
   constructor(private httpClient: HttpClient) {  }
 
   getReservations(): Observable<Reservation[]> {
-    return this.httpClient.get<Reservation[]>('https://localhost:444/api/reservations');
+    return this.httpClient.get<Reservation[]>('https://localhost:444/api/v1/reservations');
   }
 
   getReservationsForDoctor(doctor:Doctor): Observable<Reservation[]> {
-    return this.httpClient.post<Reservation[]>('https://localhost:444/api/doctors/reservations', doctor, {headers: this.headers});
+    return this.httpClient.post<Reservation[]>('https://localhost:444/api/v1/doctors/reservations', doctor, {headers: this.headers});
   }
   getReservationsForPatient(patient:Patient): Observable<Reservation[]> {
-    return this.httpClient.post<Reservation[]>('https://localhost:444/api/patients/reservations', patient, {headers: this.headers});
+    return this.httpClient.post<Reservation[]>('https://localhost:444/api/v1/patients/reservations', patient, {headers: this.headers});
   }
 
   addReservation(Reservation: Reservation): Observable<Reservation> {
-    return this.httpClient.post<Reservation>('https://localhost:444/api/reservations', Reservation, {headers: this.headers});
+    return this.httpClient.post<Reservation>('https://localhost:444/api/v1/reservations', Reservation, {headers: this.headers});
   }
   updateReservation(Reservation: Reservation): Observable<Reservation> {
-    return this.httpClient.put<Reservation>('https://localhost:444/api/reservations', Reservation, {headers: this.headers});
+    return this.httpClient.put<Reservation>('https://localhost:444/api/v1/reservations', Reservation, {headers: this.headers});
   }
   getReservationById(id: number): Observable<Reservation> {
-    const url = `https://localhost:444/api/reservations/${id}`;
+    const url = `https://localhost:444/api/v1/reservations/${id}`;
     return this.httpClient.get<Reservation>(url);
   }
 
   deleteReservation(id: number): Observable<Reservation> {
-    const url = `https://localhost:444/api/reservations/${id}`;
+    const url = `https://localhost:444/api/v1/reservations/${id}`;
     return this.httpClient.delete<Reservation>(url, {headers: this.headers});
   }
 }
