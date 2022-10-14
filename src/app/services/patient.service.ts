@@ -17,7 +17,7 @@ export class PatientService {
   }
 
   getPatientById(patientId: number): Observable<Patient> {
-    const url = this.BASE_URL + '/patients/${patientId}';
+    const url = this.BASE_URL + `/patients/${patientId}`;
     return this.httpClient.get<Patient>(url);
   }
 
@@ -26,7 +26,7 @@ export class PatientService {
   }
 
   removePatient(patientId: number): Observable<Patient> {
-    const url = this.BASE_URL + '/patients/${patientId}';
+    const url = this.BASE_URL + `/patients/${patientId}`;
     return this.httpClient.delete<Patient>(url, {headers: this.headers});
   }
 

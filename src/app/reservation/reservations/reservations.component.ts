@@ -53,7 +53,7 @@ export class ReservationsComponent implements OnInit {
   }
 
   getDataForDoctor(doctor: Doctor): void {
-    this.reservationService.getReservationsForDoctor(doctor).subscribe(doctor => {
+    this.reservationService.getReservationsForDoctor(doctor.id).subscribe(doctor => {
         this.changeDetectorRefs.detectChanges();
         console.log(doctor);
         this.dataSource = new MatTableDataSource(doctor);

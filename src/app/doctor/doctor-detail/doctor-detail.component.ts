@@ -31,7 +31,7 @@ export class DoctorDetailComponent implements OnInit {
     this.doctorService.getDoctorById(Number(this.route.snapshot.paramMap.get('id')))
       .subscribe(doctor => {
         this.doctor = doctor;
-        this.reservationService.getReservationsForDoctor(doctor).subscribe((reservation: Reservation[]) => {
+        this.reservationService.getReservationsForDoctor(doctor.id).subscribe((reservation: Reservation[]) => {
           this.reservations = reservation;
           console.log(reservation);
         });

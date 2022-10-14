@@ -70,7 +70,7 @@ export class NewReservationComponent implements OnInit {
     console.log(doctor);
 
     this.dates = [];
-    this.reservationService.getReservationsForDoctor(doctor).subscribe(reservation => {
+    this.reservationService.getReservationsForDoctor(doctor.id).subscribe(reservation => {
       this.reservations = reservation;
       this.prepareDate(reservation);
     });

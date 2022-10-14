@@ -21,7 +21,7 @@ export class MedicineService {
   }
 
   deleteMedicine(id: number): Observable<Medicine> {
-    const url = this.BASE_URL + '/medicines/${id}';
+    const url = this.BASE_URL + `/medicines/${id}`;
     return this.httpClient.delete<Medicine>(url, {headers: this.headers});
   }
 
